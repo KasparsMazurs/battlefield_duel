@@ -1,0 +1,21 @@
+/** Background **/
+body {
+    background: url(../images/background.jpg);
+    background-size: cover;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+* {
+    background-color: rgba(0, 0, 0, .4);
+    margin: 0;
+    padding: 0;
+    border: none;
+    height: 100%;
+    width: 100%;
+}
+
+h1 {
+    color: azure;
+}
