@@ -88,7 +88,7 @@ font-family: 'Rubik Distressed', cursive; **/
     margin-top: 400px;
 }
 
-
+/** Add soldier**/
 #your_soldier{
     position: fixed;
     top: 50%;
@@ -101,4 +101,53 @@ font-family: 'Rubik Distressed', cursive; **/
     top: 50%;
     left: 80%;
     transform: translate(-50%, -50%);
+}
+
+/** Add explosions**/
+#you_shoot_straight{
+    position: fixed;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#you_shoot_up{
+    position: fixed;
+    top: 40%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#you_shoot_down{
+    position: fixed;
+    top: 60%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#enemy_shoot_straight{
+    position: fixed;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#enemy_shoot_up{
+    position: fixed;
+    top: 40%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#enemy_shoot_down{
+    position: fixed;
+    top: 60%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    display: none;
 }
