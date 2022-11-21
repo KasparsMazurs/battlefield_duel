@@ -1,20 +1,32 @@
+/** Import fonts **/
+@import url('https://fonts.googleapis.com/css2?family=Marhey&family=Rubik+Distressed&display=swap');
+
+/** font-family: 'Marhey', cursive;
+font-family: 'Rubik Distressed', cursive; **/
+
 * {
     margin: 0;
     padding: 0;
     border: none;
+    font-family:Marhey, ans-serif;
 }
 
+/** Title **/
 .title {
     background-image: url(../images/vintage-pistol.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    color: azure;
+    font-family: Rubik Distressed, sans-serif;
+    color:aquamarine;
+    font-size: 60px;
+    font-weight: 90;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
+/** Choose gun section **/
 .guns {
     text-align: center;
     padding-top: 10px;
@@ -22,6 +34,7 @@
 
 .choose_weapon{
     text-align: center;
+    font-size: 30px;
 }
 
 .choose_gun {
