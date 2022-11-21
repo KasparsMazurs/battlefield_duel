@@ -5,6 +5,11 @@
 }
 
 .title {
+    background-image: url(../images/vintage-pistol.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: azure;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
