@@ -29,16 +29,26 @@ font-family: 'Rubik Distressed', cursive; **/
 /** Choose gun section **/
 .guns {
     text-align: center;
-    padding-top: 10px;
+    background-image: url(../images/sky.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .choose_weapon{
     text-align: center;
     font-size: 30px;
+    padding-bottom: 30px;
+    background-color: rgba(0, 0, 0, .3);
+    height: 100%;
+    width: 100%;
 }
 
 .choose_gun {
     display: inline-block;
+    background-color: rgba(0, 0, 0, .3);
+    height: 100%;
+    width: 100%;
 }
 
 #pistol {
@@ -48,4 +58,7 @@ font-family: 'Rubik Distressed', cursive; **/
 .confirm_gun {
     margin-top: 20px;
     margin-bottom: 20px;
+    background-color: red;
+    font-size: 20px;
+    font-weight: 30;
 }
