@@ -69,3 +69,17 @@ font-family: 'Rubik Distressed', cursive; **/
     background-size: cover;
     background-position: center;
 }
+
+/** HP field **/
+
+.hp_field {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    color:rgb(238, 94, 94);
+    background-color: rgba(0, 0, 0, .3);
+    font-size: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
