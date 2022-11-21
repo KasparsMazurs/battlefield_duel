@@ -62,3 +62,10 @@ font-family: 'Rubik Distressed', cursive; **/
     font-size: 20px;
     font-weight: 30;
 }
+
+.field {
+    background-image: url(../images/field.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
