@@ -1,21 +1,33 @@
-/** Background **/
-body {
-    background: url(../images/background.jpg);
-    background-size: cover;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-}
-
 * {
-    background-color: rgba(0, 0, 0, .4);
     margin: 0;
     padding: 0;
     border: none;
-    height: 100%;
-    width: 100%;
 }
 
-h1 {
-    color: azure;
+.title {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.guns {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.choose_weapon{
+    text-align: center;
+}
+
+.choose_gun {
+    display: inline-block;
+}
+
+#pistol {
+    margin-right:100px
+}
+
+.confirm_gun {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

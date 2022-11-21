@@ -14,9 +14,18 @@
 </head>
 <body>
     <h1 class="title">Battlefield duel <i class="fa-solid fa-person-rifle"></i></h1>
-    <p class="choose_gun">Choose your gun</p>
+    <p class="choose_weapon">Choose your weapon!</p>
     <div class="guns">
-        <p>Here you will choose a gun</p>
+        <form method="post" class="choose_gun">
+            <label for="choose_gun"><img src="assets/images/pistol.png" alt="Pistol"></label>
+            <input type="radio" id="pistol" name="weapon" value="Pistol" required>
+            
+            <label for="choose_gun"><img src="assets/images/ak-47.png" alt="Ak-47"></label>
+            <input type="radio" id="ak-47" name="weapon" value="Ak-47" required>
+            <br />
+            <input class="confirm_gun" type="submit" value="Confirm gun">
+        </form>
+
     </div>
     <div class="hp">
         <p>Here you will see you and PC HP</p>
@@ -27,25 +36,25 @@
     <section  class="move_section">
         <form method="post" class="your_move">
             <p class="gun">Where will you shoot</p>
-            <label for="road">Up</label>
+            <label for="your_move">Up</label>
             <input type="radio" id="up_1" name="shoot_preference_1" value="up" required>
-            <label for="road">Straight</label>
+            <label for="your_move">Straight</label>
             <input type="radio" id="straight_1" name="shoot_preference_1" value="straight" required>
-            <label for="road">Down</label>
+            <label for="your_move">Down</label>
             <input type="radio" id="down_1" name="shoot_preference_1" value="down" required>
             <p class="second_gun">Where will you shoot with second gun</p>
-            <label for="road">Up</label>
+            <label for="your_move">Up</label>
             <input type="radio" id="up_2" name="shoot_preference_2" value="up" required>
-            <label for="road">Straight</label>
+            <label for="your_move">Straight</label>
             <input type="radio" id="straight_2" name="shoot_preference_2" value="straight" required>
-            <label for="road">Down</label>
+            <label for="your_move">Down</label>
             <input type="radio" id="down_2" name="shoot_preference_2" value="down" required>
             <p class="move">Where will you move</p>
-            <label for="road">Up</label>
+            <label for="your_move">Up</label>
             <input type="radio" id="up_m" name="move_preference" value="up" required>
-            <label for="road">Stay put</label>
+            <label for="your_move">Stay put</label>
             <input type="radio" id="stay_put" name="move_preference" value="stay_put" required>
-            <label for="road">Down</label>
+            <label for="your_move">Down</label>
             <input type="radio" id="down_m" name="move_preference" value="down" required>
 
             <input class="make_move" type="submit" value="Make move">
