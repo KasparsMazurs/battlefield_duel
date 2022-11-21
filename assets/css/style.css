@@ -83,3 +83,22 @@ font-family: 'Rubik Distressed', cursive; **/
     padding-right: 30px;
 }
 
+/** Game field **/
+.game_field {
+    margin-top: 400px;
+}
+
+
+#your_soldier{
+    position: fixed;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+
+#enemy_soldier{
+    position: fixed;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+}
