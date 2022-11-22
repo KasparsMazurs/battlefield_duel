@@ -175,3 +175,18 @@ font-family: 'Rubik Distressed', cursive; **/
 .second_gun {
     display: none;
 }
+
+.gems_description{
+    background-color: rgba(103, 117, 248, 0.3);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.description{
+    height: 100px;
+    width: 70%;
+    color: black;
+}
