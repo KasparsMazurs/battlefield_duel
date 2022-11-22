@@ -86,6 +86,7 @@ font-family: 'Rubik Distressed', cursive; **/
 /** Game field **/
 .game_field {
     margin-top: 400px;
+    padding-bottom: 50px;
 }
 
 /** Add soldier**/
@@ -189,4 +190,37 @@ font-family: 'Rubik Distressed', cursive; **/
     height: 100px;
     width: 70%;
     color: black;
+}
+
+/** For medium screen size from 574px **/
+@media screen and (max-width: 574px) {
+    .title {
+        font-size: 30px;
+        font-weight: 40;
+    }
+
+    .hp_field {
+        font-size: 20px;
+}
+}
+
+/** For medium screen size from 360px **/
+@media screen and (max-width: 360px) {
+    .title {
+        font-size: 20px;
+        font-weight: 20;
+    }
+
+    .hp_field {
+        font-size: 10px;
+}
+    .confirm_gun {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 10px;
+        font-weight: 10;
+}
+    .choose_weapon{
+        font-size: 20px;
+}
 }
