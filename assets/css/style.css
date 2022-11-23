@@ -173,8 +173,8 @@ font-family: 'Rubik Distressed', cursive; **/
     padding-left: 20px;
 }
 
-.second_gun {
-    display: none;
+#second_gun {
+    visibility: hidden; 
 }
 
 .gems_description{

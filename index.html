@@ -16,14 +16,14 @@
     <h1 class="title">Battlefield duel <i class="fa-solid fa-person-rifle"></i></h1>
     <div class="guns">
         <p class="choose_weapon">Choose your weapon!</p>
-        <form method="post" class="choose_gun">
+        <form class="choose_gun">
             <label class="pistol" for="choose_gun"><img src="assets/images/pistol.png" alt="Pistol"></label>
-            <input class="pistol" type="radio" id="pistol" name="weapon" value="Pistol">
+            <input class="pistol" type="radio" id="pistol" name="weapon" value="pistol" required>
             
             <label class="ak-47" for="choose_gun"><img src="assets/images/ak-47.png" alt="Ak-47"></label>
-            <input class="ak-47" type="radio" id="ak-47" name="weapon" value="Ak-47" checked>
+            <input class="ak-47" type="radio" id="ak-47" name="weapon" value="ak-47" required>
             <br />
-            <button class="confirm_gun" type="submit" id="send">Confirm gun</button>
+            <button type="button" class="confirm_gun" onclick="confirm_gun()">Confirm gun</button>
         </form>
 
     </div>
@@ -55,14 +55,17 @@
                 <input type="radio" id="straight_1" name="shoot_preference_1" value="straight" required>
                 <label for="your_move">Down</label>
                 <input type="radio" id="down_1" name="shoot_preference_1" value="down" required>
-
+                
+                <div id="second_gun">
                 <p class="second_gun">Where will you shoot with second gun</p>
+                
                 <label class="second_gun" for="your_move">Up</label>
                 <input class="second_gun" type="radio" id="up_2" name="shoot_preference_2" value="up">
                 <label class="second_gun" for="your_move">Straight</label>
                 <input class="second_gun" type="radio" id="straight_2" name="shoot_preference_2" value="straight">
                 <label class="second_gun" for="your_move">Down</label>
                 <input class="second_gun" type="radio" id="down_2" name="shoot_preference_2" value="down">
+                </div>
 
                 <p class="move">Where will you move</p>
                 <label for="your_move">Up</label>
