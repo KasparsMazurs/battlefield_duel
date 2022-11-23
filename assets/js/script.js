@@ -8,3 +8,14 @@ function confirm_gun() {
         document.getElementById("second_gun").style.visibility = "hidden";
     }
 }
+
+function your_soldier() {
+    document.getElementById("your_soldier").style.top = "50%";
+    y = document.getElementById("your_soldier").offsetTop;
+    while ( y = 61) {
+        setTimeout(function() {
+            document.getElementById("your_soldier").style.top = y + "%";
+            y++;
+        }, 1000)
+    }
+}
