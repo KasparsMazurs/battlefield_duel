@@ -36,7 +36,7 @@
                 Enemy HP: <span id="enemy_hp">100</span>
             </div>
         </div>
-        <div class="game_field">
+        <div class="game_field" id ="field">
             <img class="soldier" id="your_soldier" src="assets/images/your_soldier.png" alt="Your soldier">
             <img class="soldier" id="enemy_soldier" src="assets/images/enemy_soldier.png" alt="Enemy soldier">
             <img class="explosion" id="you_shoot_straight" src="assets/images/explosion.png" alt="You shoot straight">
@@ -76,9 +76,8 @@
                 <input type="radio" id="down_m" name="move_preference" value="down" required>
 
                 <br />
-                <button class="make_move" type="submit" id="send">Make move</button>
+                <button class="make_move" type="submit" onclick="make_move()">Make move</button>
             </form>
-            <button onclick="your_soldier()" type="submit" id="send">Make move</button>
         </section>
         <div class="gems_description">
             <input id="description" type="description" name="description" placeholder="Here will be game description" class="description" READONLY>
