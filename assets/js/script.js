@@ -10,22 +10,6 @@ function confirm_gun() {
     document.forms["move"]["nothing"].checked=true;
 }
 
-   // document.getElementById("your_soldier").style.top = "40%"; // move your soldier up
-   // document.getElementById("your_soldier").style.top = "60%"; // move your soldier down
-   // document.getElementById("enemy_soldier").style.top = "40%"; // move enemy_soldier up
-   // document.getElementById("enemy_soldier").style.top = "60%"; // move enemy_soldier down
-
-   // setTimeout(function() {
-   // }, 1000) // set Timeout
-
-   // let num1 = Math.floor(Math.random()*25) + 1; // mgenerate random number from 1 to 25
-   // document.getElementById("you_shoot_straight").style.visibility = "visible";
-   // document.getElementById("you_shoot_up").style.visibility = "visible";
-   // document.getElementById("you_shoot_down").style.visibility = "visible";
-   // document.getElementById("enemy_shoot_straight").style.visibility = "visible";
-   // document.getElementById("enemy_shoot_up").style.visibility = "visible";
-   // document.getElementById("enemy_shoot_down").style.visibility = "visible";
-
    function make_move() {
     let move = document.querySelector('input[name="move_preference"]:checked').value
     let shoot_1 = document.querySelector('input[name="shoot_preference_1"]:checked').value
@@ -39,6 +23,7 @@ function confirm_gun() {
      } else {
         document.getElementById("your_soldier").style.top = "50%";
      }
+   
      
 // Make enemy solder move up or down 1=up, 2=stay_put, 3=down
     let e_move = Math.floor(Math.random()*3) + 1;
@@ -68,7 +53,7 @@ function confirm_gun() {
         } else if (shoot_2 === "straight") {
             document.getElementById("you_shoot_straight").style.visibility = "visible";
         }
-    }, 1000)    
+    }, 1000)
 
 // Make visible explosion in place where enemy decided to shoot down 1=up, 2=straight, 3=down
 setTimeout(function() {
@@ -82,10 +67,42 @@ setTimeout(function() {
     }
 }, 1000) 
 
+// Calculate damage
+
+// change your move into a number, this will be needed to check if there is damage
+setTimeout(function() {
+    if (move === "up"){
+        move = 1;
+    } else if (move === "straight") {
+        move = 2;
+    } else if (move === "down") {
+        move = 3;
+    }
+}, 3000)
+// change your shooting into a number, this will be needed to check if there is damage
+setTimeout(function() {
+    if (shoot_2 === "up"){
+        shoot_2 = 1;
+    } else if (shoot_2 === "down") {
+        shoot_2 = 3;
+    } else if (shoot_2 === "straight") {
+        shoot_2 = 2;
+    }
+}, 3000)
+
+setTimeout(function() {
+    if (shoot_1 === "up"){
+        shoot_1 = 1;
+    } else if (shoot_1 === "down") {
+        shoot_1 = 3;
+    } else if (shoot_1 === "straight") {
+        shoot_1 = 2;
+    }
+}, 3000)
 
 
 
-// Make visible explosion in place where enemy decided to shoot down 1=up, 2=straight, 3=down
+// Reset the game field for the next turn
 setTimeout(function() {
     document.getElementById("you_shoot_straight").style.visibility = "hidden";
     document.getElementById("you_shoot_up").style.visibility = "hidden";
