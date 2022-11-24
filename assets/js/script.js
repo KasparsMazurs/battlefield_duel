@@ -82,4 +82,19 @@ setTimeout(function() {
     }
 }, 1000) 
 
+
+
+
+// Make visible explosion in place where enemy decided to shoot down 1=up, 2=straight, 3=down
+setTimeout(function() {
+    document.getElementById("you_shoot_straight").style.visibility = "hidden";
+    document.getElementById("you_shoot_up").style.visibility = "hidden";
+    document.getElementById("you_shoot_down").style.visibility = "hidden";
+    document.getElementById("enemy_shoot_straight").style.visibility = "hidden";
+    document.getElementById("enemy_shoot_up").style.visibility = "hidden";
+    document.getElementById("enemy_shoot_down").style.visibility = "hidden";
+    document.getElementById("enemy_soldier").style.top = "50%";
+    document.getElementById("your_soldier").style.top = "50%";
+}, 5000) 
+
 }
