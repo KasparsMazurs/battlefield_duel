@@ -10,9 +10,6 @@ function confirm_gun() {
     document.forms["move"]["nothing"].checked=true;
 }
 
-
-
-
    // document.getElementById("your_soldier").style.top = "40%"; // move your soldier up
    // document.getElementById("your_soldier").style.top = "60%"; // move your soldier down
    // document.getElementById("enemy_soldier").style.top = "40%"; // move enemy_soldier up
@@ -42,27 +39,35 @@ function confirm_gun() {
      } else {
         document.getElementById("your_soldier").style.top = "50%";
      }
-
-// Make visible explosion in place where you decided to shoot
-    if (shoot_1 === "up"){
-        document.getElementById("you_shoot_up").style.visibility = "visible";
-     } else if (shoot_1 === "down") {
-        document.getElementById("you_shoot_down").style.visibility = "visible";
-     } else {
-        document.getElementById("you_shoot_straight").style.visibility = "visible";
-     }
-
-// Make visible explosion in place where you decided to shoot with secon gun
-    if (shoot_2 === "up"){
-        document.getElementById("you_shoot_up").style.visibility = "visible";
-    } else if (shoot_2 === "down") {
-        document.getElementById("you_shoot_down").style.visibility = "visible";
-    } else if (shoot_2 === "straight") {
-        document.getElementById("you_shoot_straight").style.visibility = "visible";
+// Make enemy solder move up or down
+    let e_move = Math.floor(Math.random()*3) + 1;
+    if (e_move === 1){
+        document.getElementById("enemy_soldier").style.top = "40%";
+    } else if (e_move === 3) {
+        document.getElementById("enemy_soldier").style.top = "60%";
     }
 
-
-
+// Make visible explosion in place where you decided to shoot
+    setTimeout(function() {
+        if (shoot_1 === "up"){
+            document.getElementById("you_shoot_up").style.visibility = "visible";
+         } else if (shoot_1 === "down") {
+            document.getElementById("you_shoot_down").style.visibility = "visible";
+         } else {
+            document.getElementById("you_shoot_straight").style.visibility = "visible";
+         }
+    }, 3000)
+    
+// Make visible explosion in place where you decided to shoot with secon gun
+    setTimeout(function() {
+        if (shoot_2 === "up"){
+            document.getElementById("you_shoot_up").style.visibility = "visible";
+        } else if (shoot_2 === "down") {
+            document.getElementById("you_shoot_down").style.visibility = "visible";
+        } else if (shoot_2 === "straight") {
+            document.getElementById("you_shoot_straight").style.visibility = "visible";
+        }
+    }, 3000)    
 
 
 
