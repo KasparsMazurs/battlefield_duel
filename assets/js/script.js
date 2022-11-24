@@ -39,7 +39,8 @@ function confirm_gun() {
      } else {
         document.getElementById("your_soldier").style.top = "50%";
      }
-// Make enemy solder move up or down
+     
+// Make enemy solder move up or down 1=up, 2=stay_put, 3=down
     let e_move = Math.floor(Math.random()*3) + 1;
     if (e_move === 1){
         document.getElementById("enemy_soldier").style.top = "40%";
@@ -56,7 +57,7 @@ function confirm_gun() {
          } else {
             document.getElementById("you_shoot_straight").style.visibility = "visible";
          }
-    }, 3000)
+    }, 1000)
     
 // Make visible explosion in place where you decided to shoot with secon gun
     setTimeout(function() {
@@ -67,8 +68,18 @@ function confirm_gun() {
         } else if (shoot_2 === "straight") {
             document.getElementById("you_shoot_straight").style.visibility = "visible";
         }
-    }, 3000)    
+    }, 1000)    
 
-
+// Make visible explosion in place where enemy decided to shoot down 1=up, 2=straight, 3=down
+setTimeout(function() {
+    let e_shoot = Math.floor(Math.random()*3) + 1;
+    if (e_shoot === 1){
+        document.getElementById("enemy_shoot_up").style.visibility = "visible";
+    } else if (e_shoot === 2) {
+        document.getElementById("enemy_shoot_straight").style.visibility = "visible";
+    } else if (e_shoot === 3) {
+        document.getElementById("enemy_shoot_down").style.visibility = "visible";
+    }
+}, 1000) 
 
 }
