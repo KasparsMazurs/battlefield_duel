@@ -7,7 +7,10 @@ function confirm_gun() {
     } else {
         document.getElementById("second_gun").style.visibility = "hidden";
     }
+    document.forms["move"]["nothing"].checked=true;
 }
+
+
 
 
    // document.getElementById("your_soldier").style.top = "40%"; // move your soldier up
@@ -28,20 +31,39 @@ function confirm_gun() {
 
    function make_move() {
     let move = document.querySelector('input[name="move_preference"]:checked').value
-//    let shoot_1 = document.querySelector('input[name="shoot_preference_1"]:checked').value
-//    let shoot_2 = document.querySelector('input[name="shoot_preference_2"]:checked').value
-// Make your solder move up or down and back
+    let shoot_1 = document.querySelector('input[name="shoot_preference_1"]:checked').value
+    let shoot_2 = document.querySelector('input[name="shoot_preference_2"]:checked').value
+
+// Make your solder move up or down
     if (move === "up"){
         document.getElementById("your_soldier").style.top = "40%";
-        setTimeout(function() {
-            document.getElementById("your_soldier").style.top = "50%"
-        }, 5000)
      } else if (move === "down") {
         document.getElementById("your_soldier").style.top = "60%";
-        setTimeout(function() {
-            document.getElementById("your_soldier").style.top = "50%"
-        }, 5000)
      } else {
         document.getElementById("your_soldier").style.top = "50%";
      }
-   }
+
+// Make visible explosion in place where you decided to shoot
+    if (shoot_1 === "up"){
+        document.getElementById("you_shoot_up").style.visibility = "visible";
+     } else if (shoot_1 === "down") {
+        document.getElementById("you_shoot_down").style.visibility = "visible";
+     } else {
+        document.getElementById("you_shoot_straight").style.visibility = "visible";
+     }
+
+// Make visible explosion in place where you decided to shoot with secon gun
+    if (shoot_2 === "up"){
+        document.getElementById("you_shoot_up").style.visibility = "visible";
+    } else if (shoot_2 === "down") {
+        document.getElementById("you_shoot_down").style.visibility = "visible";
+    } else if (shoot_2 === "straight") {
+        document.getElementById("you_shoot_straight").style.visibility = "visible";
+    }
+
+
+
+
+
+
+}

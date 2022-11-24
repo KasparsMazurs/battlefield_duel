@@ -47,7 +47,7 @@
             <img class="explosion" id="enemy_shoot_down" src="assets/images/explosion.png" alt="Enemy shoot down">
         </div>
         <section  class="move_section">
-            <form method="post" class="your_move">
+            <form class="your_move" id="move">
                 <p class="gun">Where will you shoot</p>
                 <label for="your_move">Up</label>
                 <input type="radio" id="up_1" name="shoot_preference_1" value="up" required>
@@ -65,6 +65,8 @@
                 <input class="second_gun" type="radio" id="straight_2" name="shoot_preference_2" value="straight">
                 <label class="second_gun" for="your_move">Down</label>
                 <input class="second_gun" type="radio" id="down_2" name="shoot_preference_2" value="down">
+                <label class="second_gun" for="your_move" id="nothing_1">Don't shoot</label>
+                <input class="second_gun" type="radio" id="nothing" name="shoot_preference_2" value="nothing" checked>
                 </div>
 
                 <p class="move">Where will you move</p>
@@ -76,7 +78,7 @@
                 <input type="radio" id="down_m" name="move_preference" value="down" required>
 
                 <br />
-                <button class="make_move" type="submit" onclick="make_move()">Make move</button>
+                <button class="make_move" type="button" onclick="make_move()">Make move</button>
             </form>
         </section>
         <div class="gems_description">

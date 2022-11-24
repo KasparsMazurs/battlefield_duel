@@ -129,6 +129,14 @@ font-family: 'Rubik Distressed', cursive; **/
     visibility: hidden; 
 }
 
+#nothing {
+    display: none;
+}
+
+#nothing_1 {
+    display: none;
+}
+
 #enemy_shoot_straight{
     position: absolute;
     top: 50%;
