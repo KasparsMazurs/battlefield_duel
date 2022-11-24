@@ -56,8 +56,8 @@ function confirm_gun() {
     }, 1000)
 
 // Make visible explosion in place where enemy decided to shoot down 1=up, 2=straight, 3=down
-setTimeout(function() {
-    let e_shoot = Math.floor(Math.random()*3) + 1;
+let e_shoot = Math.floor(Math.random()*3) + 1;
+setTimeout(function() {    
     if (e_shoot === 1){
         document.getElementById("enemy_shoot_up").style.visibility = "visible";
     } else if (e_shoot === 2) {
@@ -65,7 +65,7 @@ setTimeout(function() {
     } else if (e_shoot === 3) {
         document.getElementById("enemy_shoot_down").style.visibility = "visible";
     }
-}, 1000) 
+}, 1000)
 
 // Calculate damage
 
@@ -73,12 +73,12 @@ setTimeout(function() {
 setTimeout(function() {
     if (move === "up"){
         move = 1;
-    } else if (move === "straight") {
+    } else if (move === "stay_put") {
         move = 2;
     } else if (move === "down") {
         move = 3;
     }
-}, 3000)
+}, 3500)
 // change your shooting into a number, this will be needed to check if there is damage
 setTimeout(function() {
     if (shoot_2 === "up"){
@@ -88,7 +88,7 @@ setTimeout(function() {
     } else if (shoot_2 === "straight") {
         shoot_2 = 2;
     }
-}, 3000)
+}, 3500)
 
 setTimeout(function() {
     if (shoot_1 === "up"){
@@ -98,9 +98,22 @@ setTimeout(function() {
     } else if (shoot_1 === "straight") {
         shoot_1 = 2;
     }
-}, 3000)
+}, 3500)
 
-
+//Check if this turn there is damage made
+setTimeout(function() {
+    if (e_shoot == move) {
+        reduce_your_hp()
+    } else if (e_move == shoot_1) {
+        reduce_enemys_hp()
+    }
+    console.log("-----")
+    console.log("my move "+ move)
+    console.log("e shoot "+ e_shoot)
+    console.log("-----")
+    console.log("my shoot "+ shoot_1)
+    console.log("e move "+ e_move)
+}, 4000)
 
 // Reset the game field for the next turn
 setTimeout(function() {
@@ -113,5 +126,23 @@ setTimeout(function() {
     document.getElementById("enemy_soldier").style.top = "50%";
     document.getElementById("your_soldier").style.top = "50%";
 }, 5000) 
+
+}
+
+function reduce_your_hp() {
+// reduce your HP if damage is made
+
+    let your_hp = parseInt(document.getElementById('your_hp').innerText);
+    let y_damage = your_hp - 20;
+    document.getElementById("your_hp").innerHTML = y_damage;
+
+}
+
+function reduce_enemys_hp() {
+// reduce enemys HP if damage is made
+
+    let enemy_hp = parseInt(document.getElementById('enemy_hp').innerText);
+    let e_damage = enemy_hp - 20;
+    document.getElementById("enemy_hp").innerHTML = e_damage;
 
 }
