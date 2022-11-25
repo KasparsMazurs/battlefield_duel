@@ -107,12 +107,6 @@ setTimeout(function() {
     } else if (e_move == shoot_1) {
         reduce_enemys_hp()
     }
-    console.log("-----")
-    console.log("my move "+ move)
-    console.log("e shoot "+ e_shoot)
-    console.log("-----")
-    console.log("my shoot "+ shoot_1)
-    console.log("e move "+ e_move)
 }, 4000)
 
 // Reset the game field for the next turn
@@ -131,11 +125,37 @@ setTimeout(function() {
 
 function reduce_your_hp() {
 // reduce your HP if damage is made
-
+//Generate random numbers from 0 - 100. It will be needed to calculate where the enemy hits you. 
+//0 - 30 leg. 31 - 60 arm. 61 - 94 body  95 - 100 headshot
     let your_hp = parseInt(document.getElementById('your_hp').innerText);
-    let y_damage = your_hp - 20;
-    document.getElementById("your_hp").innerHTML = y_damage;
-
+    let y_damage = [];
+    let e_aim = Math.floor(Math.random()*100) + 1;
+    console.log("This is e_aim number "+ e_aim);
+    if (e_aim <= 30) {
+        e_aim = "leg"; //This will be needed for text description later
+        y_damage = Math.floor(Math.random()*20) + 5;
+        document.getElementById("your_hp").innerHTML = your_hp - y_damage;
+        console.log("This is e_aim "+ e_aim);
+        console.log("This is y_damage "+ y_damage);
+    } else if (e_aim >= 31, e_aim <= 60) {
+        e_aim = "arm"; //This will be needed for text description later
+        y_damage = Math.floor(Math.random()*20) + 5;
+        document.getElementById("your_hp").innerHTML = your_hp - y_damage;
+        console.log("This is e_aim "+ e_aim);
+        console.log("This is y_damage "+ y_damage);
+    } else if (e_aim >= 61, e_aim <= 94) {
+        e_aim = "body"; //This will be needed for text description later
+        y_damage = Math.floor(Math.random()*30) + 5;
+        document.getElementById("your_hp").innerHTML = your_hp - y_damage;
+        console.log("This is e_aim "+ e_aim);
+        console.log("This is y_damage "+ y_damage);
+    } else if (e_aim >= 95, e_aim <= 100) {
+        e_aim = "Head"; //This will be needed for text description later
+        y_damage = 100;
+        document.getElementById("your_hp").innerHTML = your_hp - y_damage;
+        console.log("This is e_aim "+ e_aim);
+        console.log("This is y_damage "+ y_damage);
+    }
 }
 
 function reduce_enemys_hp() {
