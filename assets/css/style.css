@@ -161,6 +161,10 @@ font-family: 'Rubik Distressed', cursive; **/
     visibility: hidden; 
 }
 
+#make_move_button {
+    visibility: visible; 
+}
+
 /** Move section **/
 
 .your_move {
