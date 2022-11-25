@@ -7,6 +7,7 @@ function confirm_gun() {
     } else {
         document.getElementById("second_gun").style.visibility = "hidden";
     }
+// If you use ak-47 other pistol will do nothing
     document.forms["move"]["nothing"].checked=true;
 }
 
@@ -159,10 +160,42 @@ function reduce_your_hp() {
 }
 
 function reduce_enemys_hp() {
-// reduce enemys HP if damage is made
-
     let enemy_hp = parseInt(document.getElementById('enemy_hp').innerText);
-    let e_damage = enemy_hp - 20;
-    document.getElementById("enemy_hp").innerHTML = e_damage;
-
+// Check which gun is used
+    let weapon = document.querySelector('input[name="weapon"]:checked').value
+// reduce enemys HP if damage is made
+//Generate random numbers from 0 - 100. It will be needed to calculate where the enemy hits you. 
+//0 - 30 leg. 31 - 60 arm. 61 - 94 body  95 - 100 headshot
+    let e_damage = [];
+    if (weapon === "pistol"){
+        ///////////////////////////////////////////////////////////////
+    } else if (weapon === "ak-47"){
+        let y_aim = Math.floor(Math.random()*100) + 1;
+        console.log("This is y_aim number "+ y_aim);
+        if (y_aim <= 30) {
+            y_aim = "leg"; //This will be needed for text description later
+            e_damage = Math.floor(Math.random()*20) + 5;
+            document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
+            console.log("This is y_aim "+ y_aim);
+            console.log("This is e_damage "+ e_damage);
+        } else if (y_aim >= 31, y_aim <= 60) {
+            y_aim = "arm"; //This will be needed for text description later
+            e_damage = Math.floor(Math.random()*20) + 5;
+            document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
+            console.log("This is y_aim "+ y_aim);
+            console.log("This is e_damage "+ e_damage);
+        } else if (y_aim >= 61, y_aim <= 94) {
+            y_aim = "body"; //This will be needed for text description later
+            e_damage = Math.floor(Math.random()*30) + 5;
+            document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
+            console.log("This is y_aim "+ y_aim);
+            console.log("This is e_damage "+ e_damage);
+        } else if (y_aim >= 95, y_aim <= 100) {
+            y_aim = "Head"; //This will be needed for text description later
+            e_damage = 100;
+            document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
+            console.log("This is y_aim "+ y_aim);
+            console.log("This is e_damage "+ e_damage);
+        }
+    }
 }
