@@ -13,6 +13,10 @@ function confirm_gun() {
 
    function make_move() {
     document.getElementById("make_move_button").style.visibility = "hidden"; // Make the "make move" button invisible while this function is running
+    setTimeout(function() {
+        document.getElementById("make_move_button").style.visibility = "visible";
+    }, 5000) // Make the "make move" button visible after 5 sec
+
     let move = document.querySelector('input[name="move_preference"]:checked').value
     let shoot_1 = document.querySelector('input[name="shoot_preference_1"]:checked').value
     let shoot_2 = document.querySelector('input[name="shoot_preference_2"]:checked').value
@@ -126,7 +130,6 @@ setTimeout(function() {
     document.getElementById("enemy_shoot_down").style.visibility = "hidden";
     document.getElementById("enemy_soldier").style.top = "650px";
     document.getElementById("your_soldier").style.top = "650px";
-    document.getElementById("make_move_button").style.visibility = "visible";
 }, 5000) 
 
 }
