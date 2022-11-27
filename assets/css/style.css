@@ -111,12 +111,22 @@ font-family: 'Rubik Distressed', cursive; **/
     font-size: 40px;
     position: absolute;
     color: aliceblue;
-    background-color: rgba(0, 0, 0, .9);
+    background-image: url(../images/vintage-pistol.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     top: 25%;
     left: 25%;
     width: 50%;
     height: 50%;
+    overflow: hidden;
     visibility: hidden;
+}
+
+#bg {
+    background-color: rgba(0, 0, 0, .3);
+    height: 1000px;
+    width: 1000px;
 }
 
 #end {
@@ -129,6 +139,7 @@ font-family: 'Rubik Distressed', cursive; **/
     position: absolute;
     top: 50%;
     left: 30%;
+    border-bottom: 4px solid white;
 }
 
 /** Game field **/
@@ -253,8 +264,26 @@ font-family: 'Rubik Distressed', cursive; **/
     white-space: pre-wrap;
 }
 
+/** For medium screen size from 1300px **/
+@media screen and (max-width: 1300px) {
+    #endgame {
+        font-size: 20px;
+    }
+}
+
+/** For medium screen size from 700px **/
+@media screen and (max-width: 700px) {
+    #endgame {
+        font-size: 10px;
+    }
+}
+
 /** For medium screen size from 574px **/
 @media screen and (max-width: 574px) {
+    #endgame {
+        font-size: 10px;
+    }
+    
     .title {
         font-size: 30px;
         font-weight: 40;
@@ -286,5 +315,8 @@ font-family: 'Rubik Distressed', cursive; **/
 }
     .damage {
         font-size: 10px;
+}
+    #endgame {
+        font-size: 5px;
 }
 }
