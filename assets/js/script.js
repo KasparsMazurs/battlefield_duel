@@ -120,18 +120,27 @@ setTimeout(function() {
     }
 }, 3500)
 
-//Check if this turn there is damage made
+//Check if this turn enamy made damage
 setTimeout(function() {
     if (e_shoot == move) {
         reduce_your_hp()
     } else if (e_shoot != move) {
         description.value += "The enemy missed you." + '\r\n';
-    } else if (e_move == shoot_2 == shoot_1 ) {
+    }
+}, 4000)
+
+//Check if this turn you made damage
+setTimeout(function() {
+    if (e_move == shoot_1) {
         reduce_enemys_hp()
-        reduce_enemys_hp()
-    } else if (e_move == shoot_2) {
-        reduce_enemys_hp()
-    } else if (e_move == shoot_1) {
+    } else if (e_move != shoot_1) {
+        description.value += "You missed enemy." + '\r\n';
+    }
+}, 4000)
+
+//Check if this turn you made damage wit second gun
+setTimeout(function() {
+    if (e_move == shoot_2) {
         reduce_enemys_hp()
     }
 }, 4000)
@@ -178,8 +187,6 @@ function reduce_your_hp() {
         y_damage = 100;
         document.getElementById("your_hp").innerHTML = your_hp - y_damage;
         description.value += "The enemy made a headshot!!!!" + '\r\n';
-    } else {
-        description.value += "The enemy missed you." + '\r\n';
     }
 }
 
@@ -193,22 +200,27 @@ function reduce_enemys_hp() {
     let e_damage = [];
     if (weapon === "pistol"){
         let y_aim = Math.floor(Math.random()*100) + 1;
+        description.value += y_aim + '\r\n';
         if (y_aim <= 30) {
             y_aim = "leg"; //This will be needed for text description later
             e_damage = Math.floor(Math.random()*7) + 5;
             document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
+            description.value += "You hit enemy in the leg and made " + e_damage + " damage" + '\r\n';
         } else if (y_aim >= 31, y_aim <= 60) {
             y_aim = "arm"; //This will be needed for text description later
             e_damage = Math.floor(Math.random()*7) + 5;
             document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
+            description.value += "You hit enemy in the arm and made " + e_damage + " damage" + '\r\n';
         } else if (y_aim >= 61, y_aim <= 97) {
             y_aim = "body"; //This will be needed for text description later
             e_damage = Math.floor(Math.random()*15) + 5;
             document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
+            description.value += "You hit enemy in the body and made " + e_damage + " damage" + '\r\n';
         } else if (y_aim >= 98, y_aim <= 100) {
             y_aim = "Head"; //This will be needed for text description later
             e_damage = 100;
             document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
+            description.value += "You made a headshot!!!!" + '\r\n';
         }
     } else if (weapon === "ak-47"){
         let y_aim = Math.floor(Math.random()*100) + 1;
@@ -216,18 +228,22 @@ function reduce_enemys_hp() {
             y_aim = "leg"; //This will be needed for text description later
             e_damage = Math.floor(Math.random()*20) + 5;
             document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
+            description.value += "You hit enemy in the leg and made " + e_damage + " damage" + '\r\n';
         } else if (y_aim >= 31, y_aim <= 60) {
             y_aim = "arm"; //This will be needed for text description later
             e_damage = Math.floor(Math.random()*20) + 5;
             document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
+            description.value += "You hit enemy in the arm and made " + e_damage + " damage" + '\r\n';
         } else if (y_aim >= 61, y_aim <= 94) {
             y_aim = "body"; //This will be needed for text description later
             e_damage = Math.floor(Math.random()*30) + 5;
             document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
+            description.value += "You hit enemy in the body and made " + e_damage + " damage" + '\r\n';
         } else if (y_aim >= 95, y_aim <= 100) {
             y_aim = "Head"; //This will be needed for text description later
             e_damage = 100;
             document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
+            description.value += "You made a headshot!!!!" + '\r\n';
         }
     }
 }
