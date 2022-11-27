@@ -13,6 +13,10 @@
     <title>Battlefield duel</title>
 </head>
 <body>
+    <div id="endgame">
+        <span id="end">THE END</span>
+        <p><span id="click" onclick="new_game()">Click here to play again</span></p>
+    </div>
     <h1 class="title">Battlefield duel <i class="fa-solid fa-person-rifle"></i></h1>
     <div class="guns">
         <p class="choose_weapon">Choose your weapon!</p>
@@ -37,6 +41,10 @@
             </div>
         </div>
         <div class="game_field" id ="field">
+            <div class="damage">
+                <span id="your_damage">0</span>
+                <span id="enemy_damage">0</span>
+            </div>
             <img class="soldier" id="your_soldier" src="assets/images/your_soldier.png" alt="Your soldier">
             <img class="soldier" id="enemy_soldier" src="assets/images/enemy_soldier.png" alt="Enemy soldier">
             <img class="explosion" id="you_shoot_straight" src="assets/images/explosion.png" alt="You shoot straight">

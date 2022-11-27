@@ -155,6 +155,8 @@ setTimeout(function() {
     document.getElementById("enemy_shoot_down").style.visibility = "hidden";
     document.getElementById("enemy_soldier").style.top = "650px";
     document.getElementById("your_soldier").style.top = "650px";
+    document.getElementById("enemy_damage").style.visibility = "hidden";
+    document.getElementById("your_damage").style.visibility = "hidden";
     description.scrollTop = description.scrollHeight; // scroll description down
     check_winner();
 }, 5000) 
@@ -167,6 +169,7 @@ function reduce_your_hp() {
 //0 - 30 leg. 31 - 60 arm. 61 - 94 body  95 - 100 headshot
     let description = document.getElementById('description');
     let your_hp = parseInt(document.getElementById('your_hp').innerText);
+    document.getElementById("enemy_damage").style.visibility = "visible";
     let y_damage = [];
     let e_aim = Math.floor(Math.random()*100) + 1;
     if (e_aim <= 30) {
@@ -174,26 +177,31 @@ function reduce_your_hp() {
         y_damage = Math.floor(Math.random()*20) + 5;
         document.getElementById("your_hp").innerHTML = your_hp - y_damage;
         description.value += "The enemy hit you in the leg and made " + y_damage + " damage" + '\r\n';
+        document.getElementById("enemy_damage").innerHTML = "-" + y_damage;
     } else if (e_aim >= 31, e_aim <= 60) {
         e_aim = "arm"; //This will be needed for text description later
         y_damage = Math.floor(Math.random()*20) + 5;
         document.getElementById("your_hp").innerHTML = your_hp - y_damage;
         description.value += "The enemy hit you in the arm and made " + y_damage + " damage" + '\r\n';
+        document.getElementById("enemy_damage").innerHTML = "-" + y_damage;
     } else if (e_aim >= 61, e_aim <= 94) {
         e_aim = "body"; //This will be needed for text description later
         y_damage = Math.floor(Math.random()*30) + 5;
         document.getElementById("your_hp").innerHTML = your_hp - y_damage;
         description.value += "The enemy hit you in the body and made " + y_damage + " damage" + '\r\n';
+        document.getElementById("enemy_damage").innerHTML = "-" + y_damage;
     } else if (e_aim >= 95, e_aim <= 100) {
         e_aim = "Head"; //This will be needed for text description later
         y_damage = 100;
         document.getElementById("your_hp").innerHTML = your_hp - y_damage;
         description.value += "The enemy made a headshot!!!!" + '\r\n';
+        document.getElementById("enemy_damage").innerHTML = "headshot";
     }
 }
 
 function reduce_enemys_hp() {
     let enemy_hp = parseInt(document.getElementById('enemy_hp').innerText);
+    document.getElementById("your_damage").style.visibility = "visible";
 // Check which gun is used
     let weapon = document.querySelector('input[name="weapon"]:checked').value
 // reduce enemys HP if damage is made
@@ -207,21 +215,25 @@ function reduce_enemys_hp() {
             e_damage = Math.floor(Math.random()*7) + 5;
             document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
             description.value += "You hit enemy in the leg and made " + e_damage + " damage" + '\r\n';
+            document.getElementById("your_damage").innerHTML = "-" + e_damage;
         } else if (y_aim >= 31, y_aim <= 60) {
             y_aim = "arm"; //This will be needed for text description later
             e_damage = Math.floor(Math.random()*7) + 5;
             document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
             description.value += "You hit enemy in the arm and made " + e_damage + " damage" + '\r\n';
+            document.getElementById("your_damage").innerHTML = "-" + e_damage;
         } else if (y_aim >= 61, y_aim <= 97) {
             y_aim = "body"; //This will be needed for text description later
             e_damage = Math.floor(Math.random()*15) + 5;
             document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
             description.value += "You hit enemy in the body and made " + e_damage + " damage" + '\r\n';
+            document.getElementById("your_damage").innerHTML = "-" + e_damage;
         } else if (y_aim >= 98, y_aim <= 100) {
             y_aim = "Head"; //This will be needed for text description later
             e_damage = 100;
             document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
             description.value += "You made a headshot!!!!" + '\r\n';
+            document.getElementById("your_damage").innerHTML = "Headshot";
         }
     } else if (weapon === "ak-47"){
         let y_aim = Math.floor(Math.random()*100) + 1;
@@ -230,21 +242,25 @@ function reduce_enemys_hp() {
             e_damage = Math.floor(Math.random()*20) + 5;
             document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
             description.value += "You hit enemy in the leg and made " + e_damage + " damage" + '\r\n';
+            document.getElementById("your_damage").innerHTML = "-" + e_damage;
         } else if (y_aim >= 31, y_aim <= 60) {
             y_aim = "arm"; //This will be needed for text description later
             e_damage = Math.floor(Math.random()*20) + 5;
             document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
             description.value += "You hit enemy in the arm and made " + e_damage + " damage" + '\r\n';
+            document.getElementById("your_damage").innerHTML = "-" + e_damage;
         } else if (y_aim >= 61, y_aim <= 94) {
             y_aim = "body"; //This will be needed for text description later
             e_damage = Math.floor(Math.random()*30) + 5;
             document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
             description.value += "You hit enemy in the body and made " + e_damage + " damage" + '\r\n';
+            document.getElementById("your_damage").innerHTML = "-" + e_damage;
         } else if (y_aim >= 95, y_aim <= 100) {
             y_aim = "Head"; //This will be needed for text description later
             e_damage = 100;
             document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
             description.value += "You made a headshot!!!!" + '\r\n';
+            document.getElementById("your_damage").innerHTML = "-" + e_damage;
         }
     }
 }
@@ -256,10 +272,24 @@ function check_winner() {
     if (your_hp <= 0) {
         description.value += "You Lose" + '\r\n';
         document.getElementById("your_hp").innerHTML = 0; // Do not allow HP slip under 0
+        document.getElementById("make_move_button").style.visibility = "hidden";
+        document.getElementById("endgame").style.visibility = "visible";
+        document.getElementById("end").innerHTML = "You Lose";
     } else if (enemy_hp <= 0) {
         description.value += "You WIN" + '\r\n';
-        document.getElementById("enemy_hp").innerHTML = 0 // Do not allow HP slip under 0
-    } else {
-        description.value += "Next round." + '\r\n'; 
+        document.getElementById("enemy_hp").innerHTML = 0; // Do not allow HP slip under 0
+        document.getElementById("make_move_button").style.visibility = "hidden";
+        document.getElementById("endgame").style.visibility = "visible";
+        document.getElementById("end").innerHTML = "You WIN";
     }
+}
+
+// Start new game
+function new_game() {
+    document.getElementById("endgame").style.visibility = "hidden";
+    document.getElementById("enemy_hp").innerHTML = 100;
+    document.getElementById("your_hp").innerHTML = 100;
+    let description = document.getElementById('description');
+    description.value = "";
+    document.getElementById("make_move_button").style.visibility = "visible";
 }

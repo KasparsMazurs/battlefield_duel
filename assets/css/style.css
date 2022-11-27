@@ -83,6 +83,54 @@ font-family: 'Rubik Distressed', cursive; **/
     padding-right: 30px;
 }
 
+/** Damage field **/
+.damage {
+    color:rgb(248, 0, 0);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#your_damage {
+    position: absolute;
+    top: 650px;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+
+#enemy_damage {
+    position: absolute;
+    top: 650px;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+
+/** Endgame screen **/
+#endgame{
+    font-size: 40px;
+    position: absolute;
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, .9);
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    visibility: hidden;
+}
+
+#end {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+
+#click {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+}
+
 /** Game field **/
 .game_field {
     margin-top: 430px;
@@ -235,5 +283,8 @@ font-family: 'Rubik Distressed', cursive; **/
 }
     .choose_weapon{
         font-size: 20px;
+}
+    .damage {
+        font-size: 10px;
 }
 }
