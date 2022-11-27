@@ -85,21 +85,21 @@ font-family: 'Rubik Distressed', cursive; **/
 
 /** Game field **/
 .game_field {
-    margin-top: 400px;
-    padding-bottom: 50px;
+    margin-top: 430px;
+    padding-bottom: 10px;
 }
 
 /** Add soldier**/
 #your_soldier{
     position: absolute;
-    top: 50%;
+    top: 650px;
     left: 20%;
     transform: translate(-50%, -50%);
 }
 
 #enemy_soldier{
     position: absolute;
-    top: 50%;
+    top: 650px;
     left: 80%;
     transform: translate(-50%, -50%);
 }
@@ -107,7 +107,7 @@ font-family: 'Rubik Distressed', cursive; **/
 /** Add explosions**/
 #you_shoot_straight{
     position: absolute;
-    top: 50%;
+    top: 650px;
     left: 80%;
     transform: translate(-50%, -50%);
     visibility: hidden;
@@ -115,7 +115,7 @@ font-family: 'Rubik Distressed', cursive; **/
 
 #you_shoot_up{
     position: absolute;
-    top: 40%;
+    top: 520px;
     left: 80%;
     transform: translate(-50%, -50%);
     visibility: hidden;
@@ -123,10 +123,10 @@ font-family: 'Rubik Distressed', cursive; **/
 
 #you_shoot_down{
     position: absolute;
-    top: 60%;
+    top: 780px;
     left: 80%;
     transform: translate(-50%, -50%);
-    visibility: hidden; 
+    visibility: hidden;
 }
 
 #nothing {
@@ -139,26 +139,26 @@ font-family: 'Rubik Distressed', cursive; **/
 
 #enemy_shoot_straight{
     position: absolute;
-    top: 50%;
+    top: 650px;
     left: 20%;
     transform: translate(-50%, -50%);
-    visibility: hidden; 
+    visibility: hidden;
 }
 
 #enemy_shoot_up{
     position: absolute;
-    top: 40%;
+    top: 520px;
     left: 20%;
     transform: translate(-50%, -50%);
-    visibility: hidden; 
+    visibility: hidden;
 }
 
 #enemy_shoot_down{
     position: absolute;
-    top: 60%;
+    top: 780px;
     left: 20%;
     transform: translate(-50%, -50%);
-    visibility: hidden; 
+    visibility: hidden;
 }
 
 #make_move_button {

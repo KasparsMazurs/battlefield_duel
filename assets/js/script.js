@@ -19,20 +19,20 @@ function confirm_gun() {
 
 // Make your solder move up or down
     if (move === "up"){
-        document.getElementById("your_soldier").style.top = "40%";
+        document.getElementById("your_soldier").style.top = "520px";
      } else if (move === "down") {
-        document.getElementById("your_soldier").style.top = "60%";
+        document.getElementById("your_soldier").style.top = "780px";
      } else {
-        document.getElementById("your_soldier").style.top = "50%";
+        document.getElementById("your_soldier").style.top = "650px";
      }
    
      
 // Make enemy solder move up or down 1=up, 2=stay_put, 3=down
     let e_move = Math.floor(Math.random()*3) + 1;
     if (e_move === 1){
-        document.getElementById("enemy_soldier").style.top = "40%";
+        document.getElementById("enemy_soldier").style.top = "520px";
     } else if (e_move === 3) {
-        document.getElementById("enemy_soldier").style.top = "60%";
+        document.getElementById("enemy_soldier").style.top = "780px";
     }
 
 // Make visible explosion in place where you decided to shoot
@@ -124,8 +124,8 @@ setTimeout(function() {
     document.getElementById("enemy_shoot_straight").style.visibility = "hidden";
     document.getElementById("enemy_shoot_up").style.visibility = "hidden";
     document.getElementById("enemy_shoot_down").style.visibility = "hidden";
-    document.getElementById("enemy_soldier").style.top = "50%";
-    document.getElementById("your_soldier").style.top = "50%";
+    document.getElementById("enemy_soldier").style.top = "650px";
+    document.getElementById("your_soldier").style.top = "650px";
     document.getElementById("make_move_button").style.visibility = "visible";
 }, 5000) 
 
