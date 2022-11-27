@@ -123,7 +123,7 @@ setTimeout(function() {
 //Check if this turn enamy made damage
 setTimeout(function() {
     if (e_shoot == move) {
-        reduce_your_hp()
+        reduce_your_hp();
     } else if (e_shoot != move) {
         description.value += "The enemy missed you." + '\r\n';
     }
@@ -132,7 +132,7 @@ setTimeout(function() {
 //Check if this turn you made damage
 setTimeout(function() {
     if (e_move == shoot_1) {
-        reduce_enemys_hp()
+        reduce_enemys_hp();
     } else if (e_move != shoot_1) {
         description.value += "You missed enemy." + '\r\n';
     }
@@ -141,7 +141,7 @@ setTimeout(function() {
 //Check if this turn you made damage wit second gun
 setTimeout(function() {
     if (e_move == shoot_2) {
-        reduce_enemys_hp()
+        reduce_enemys_hp();
     }
 }, 4000)
 
@@ -155,6 +155,8 @@ setTimeout(function() {
     document.getElementById("enemy_shoot_down").style.visibility = "hidden";
     document.getElementById("enemy_soldier").style.top = "650px";
     document.getElementById("your_soldier").style.top = "650px";
+    description.scrollTop = description.scrollHeight; // scroll description down
+    check_winner();
 }, 5000) 
 
 }
@@ -200,7 +202,6 @@ function reduce_enemys_hp() {
     let e_damage = [];
     if (weapon === "pistol"){
         let y_aim = Math.floor(Math.random()*100) + 1;
-        description.value += y_aim + '\r\n';
         if (y_aim <= 30) {
             y_aim = "leg"; //This will be needed for text description later
             e_damage = Math.floor(Math.random()*7) + 5;
@@ -245,5 +246,20 @@ function reduce_enemys_hp() {
             document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
             description.value += "You made a headshot!!!!" + '\r\n';
         }
+    }
+}
+
+// Check for winner in the game, if there is no winner yet competition continues
+function check_winner() {
+    let your_hp = parseInt(document.getElementById('your_hp').innerText);
+    let enemy_hp = parseInt(document.getElementById('enemy_hp').innerText);
+    if (your_hp <= 0) {
+        description.value += "You Lose" + '\r\n';
+        document.getElementById("your_hp").innerHTML = 0; // Do not allow HP slip under 0
+    } else if (enemy_hp <= 0) {
+        description.value += "You WIN" + '\r\n';
+        document.getElementById("enemy_hp").innerHTML = 0 // Do not allow HP slip under 0
+    } else {
+        description.value += "Next round." + '\r\n'; 
     }
 }
