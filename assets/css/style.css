@@ -199,7 +199,7 @@ font-family: 'Rubik Distressed', cursive; **/
 }
 
 #description{
-    height: 100px;
+    height: 300px;
     width: 70%;
     color: black;
     white-space: pre-wrap;

@@ -24,13 +24,13 @@ function confirm_gun() {
 // Make your solder move up or down
     if (move === "up"){
         document.getElementById("your_soldier").style.top = "520px";
-        description.value += "You choose to move up" + '\r\n';
+        description.value += "You choose to move up." + '\r\n';
      } else if (move === "down") {
         document.getElementById("your_soldier").style.top = "780px";
-        description.value += "You choose to move down" + '\r\n';
+        description.value += "You choose to move down." + '\r\n';
      } else {
         document.getElementById("your_soldier").style.top = "650px";
-        description.value += "You choose to stay put" + '\r\n';
+        description.value += "You choose to stay put." + '\r\n';
      }
    
      
@@ -38,18 +38,25 @@ function confirm_gun() {
     let e_move = Math.floor(Math.random()*3) + 1;
     if (e_move === 1){
         document.getElementById("enemy_soldier").style.top = "520px";
+        description.value += "Enemy choose to move up." + '\r\n';
     } else if (e_move === 3) {
         document.getElementById("enemy_soldier").style.top = "780px";
+        description.value += "Enemy choose to move down." + '\r\n';
+    } else {
+        description.value += "Enemy choose to stay put." + '\r\n';
     }
 
 // Make visible explosion in place where you decided to shoot
     setTimeout(function() {
         if (shoot_1 === "up"){
             document.getElementById("you_shoot_up").style.visibility = "visible";
+            description.value += "You choose to aim up." + '\r\n';
          } else if (shoot_1 === "down") {
             document.getElementById("you_shoot_down").style.visibility = "visible";
+            description.value += "You choose to aim down." + '\r\n';
          } else {
             document.getElementById("you_shoot_straight").style.visibility = "visible";
+            description.value += "You choose to aim straight." + '\r\n';
          }
     }, 1000)
     
@@ -57,10 +64,13 @@ function confirm_gun() {
     setTimeout(function() {
         if (shoot_2 === "up"){
             document.getElementById("you_shoot_up").style.visibility = "visible";
+            description.value += "You choose to aim up with your second gun." + '\r\n';
         } else if (shoot_2 === "down") {
             document.getElementById("you_shoot_down").style.visibility = "visible";
+            description.value += "You choose to aim down with your second gun." + '\r\n';
         } else if (shoot_2 === "straight") {
             document.getElementById("you_shoot_straight").style.visibility = "visible";
+            description.value += "You choose to aim straight with your second gun." + '\r\n';
         }
     }, 1000)
 
@@ -69,14 +79,15 @@ let e_shoot = Math.floor(Math.random()*3) + 1;
 setTimeout(function() {    
     if (e_shoot === 1){
         document.getElementById("enemy_shoot_up").style.visibility = "visible";
+        description.value += "Enemy choose to aim up." + '\r\n';
     } else if (e_shoot === 2) {
         document.getElementById("enemy_shoot_straight").style.visibility = "visible";
+        description.value += "Enemy choose to aim straight." + '\r\n';
     } else if (e_shoot === 3) {
         document.getElementById("enemy_shoot_down").style.visibility = "visible";
+        description.value += "Enemy choose to aim down." + '\r\n';
     }
 }, 1000)
-
-// Calculate damage
 
 // change your move into a number, this will be needed to check if there is damage
 setTimeout(function() {
@@ -113,6 +124,8 @@ setTimeout(function() {
 setTimeout(function() {
     if (e_shoot == move) {
         reduce_your_hp()
+    } else if (e_shoot != move) {
+        description.value += "The enemy missed you." + '\r\n';
     } else if (e_move == shoot_2 == shoot_1 ) {
         reduce_enemys_hp()
         reduce_enemys_hp()
@@ -141,6 +154,7 @@ function reduce_your_hp() {
 // reduce your HP if damage is made
 //Generate random numbers from 0 - 100. It will be needed to calculate where the enemy hits you. 
 //0 - 30 leg. 31 - 60 arm. 61 - 94 body  95 - 100 headshot
+    let description = document.getElementById('description');
     let your_hp = parseInt(document.getElementById('your_hp').innerText);
     let y_damage = [];
     let e_aim = Math.floor(Math.random()*100) + 1;
@@ -148,18 +162,24 @@ function reduce_your_hp() {
         e_aim = "leg"; //This will be needed for text description later
         y_damage = Math.floor(Math.random()*20) + 5;
         document.getElementById("your_hp").innerHTML = your_hp - y_damage;
+        description.value += "The enemy hit you in the leg and made " + y_damage + " damage" + '\r\n';
     } else if (e_aim >= 31, e_aim <= 60) {
         e_aim = "arm"; //This will be needed for text description later
         y_damage = Math.floor(Math.random()*20) + 5;
         document.getElementById("your_hp").innerHTML = your_hp - y_damage;
+        description.value += "The enemy hit you in the arm and made " + y_damage + " damage" + '\r\n';
     } else if (e_aim >= 61, e_aim <= 94) {
         e_aim = "body"; //This will be needed for text description later
         y_damage = Math.floor(Math.random()*30) + 5;
         document.getElementById("your_hp").innerHTML = your_hp - y_damage;
+        description.value += "The enemy hit you in the body and made " + y_damage + " damage" + '\r\n';
     } else if (e_aim >= 95, e_aim <= 100) {
         e_aim = "Head"; //This will be needed for text description later
         y_damage = 100;
         document.getElementById("your_hp").innerHTML = your_hp - y_damage;
+        description.value += "The enemy made a headshot!!!!" + '\r\n';
+    } else {
+        description.value += "The enemy missed you." + '\r\n';
     }
 }
 
