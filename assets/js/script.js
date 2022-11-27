@@ -1,4 +1,3 @@
-
 // This function will allow choosing a weapon. If the player carries a pistol he will be allowed to shout at two places simultaneously
 function confirm_gun() {
     let weapon = document.querySelector('input[name="weapon"]:checked').value
@@ -12,11 +11,12 @@ function confirm_gun() {
 }
 
    function make_move() {
+    let description = document.getElementById('description');
+    description.value += '----------------------' + '\r\n';
     document.getElementById("make_move_button").style.visibility = "hidden"; // Make the "make move" button invisible while this function is running
     setTimeout(function() {
         document.getElementById("make_move_button").style.visibility = "visible";
     }, 5000) // Make the "make move" button visible after 5 sec
-
     let move = document.querySelector('input[name="move_preference"]:checked').value
     let shoot_1 = document.querySelector('input[name="shoot_preference_1"]:checked').value
     let shoot_2 = document.querySelector('input[name="shoot_preference_2"]:checked').value
@@ -24,10 +24,13 @@ function confirm_gun() {
 // Make your solder move up or down
     if (move === "up"){
         document.getElementById("your_soldier").style.top = "520px";
+        description.value += "You choose to move up" + '\r\n';
      } else if (move === "down") {
         document.getElementById("your_soldier").style.top = "780px";
+        description.value += "You choose to move down" + '\r\n';
      } else {
         document.getElementById("your_soldier").style.top = "650px";
+        description.value += "You choose to stay put" + '\r\n';
      }
    
      

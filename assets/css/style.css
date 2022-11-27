@@ -198,10 +198,11 @@ font-family: 'Rubik Distressed', cursive; **/
     padding-bottom: 30px;
 }
 
-.description{
+#description{
     height: 100px;
     width: 70%;
     color: black;
+    white-space: pre-wrap;
 }
 
 /** For medium screen size from 574px **/
