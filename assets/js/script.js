@@ -1,10 +1,19 @@
 // Add/Define audio assets for game
 var audio = new Audio("assets/sounds/background.mp3");
+
 function loop_bg_music() {
     audio.currentTime = 0; //rewind audio track to the beginning
     audio.play(); // play it
-    audio.volume = 0.4; //lower background music volume
+    audio.volume = 0.2; //lower background music volume
+    audio.loop = true;
   }
+
+var hit_target = new Audio("assets/sounds/hit_target.mp3");
+var injured = new Audio("assets/sounds/injured.mp3");
+var lose = new Audio("assets/sounds/lose.mp3");
+var shot = new Audio("assets/sounds/shot.mp3");
+var win = new Audio("assets/sounds/win.mp3");
+
 
 // This function will allow choosing a weapon. If the player carries a pistol he will be allowed to shout at two places simultaneously
 function confirm_gun() {
@@ -18,7 +27,8 @@ function confirm_gun() {
     document.forms["move"]["nothing"].checked=true;
 }
 
-   function make_move() {
+function make_move() {
+    audio.pause();
     let description = document.getElementById('description');
     description.value += '----------------------' + '\r\n';
     document.getElementById("make_move_button").style.visibility = "hidden"; // Make the "make move" button invisible while this function is running
