@@ -1,3 +1,42 @@
+// Add/Define audio assets for game
+class AudioController {
+    constructor() {
+        this.bgMusic = new Audio('../assets/sounds/background.mp3');
+        this.shot = new Audio('../assets/sounds/shot.mp3');
+        this.lose = new Audio('../assets/sounds/lose.mp3');
+        this.win = new Audio('../assets/sounds/win.mp3');
+        this.injured = new Audio('assets/sounds/injured.mp3');
+        this.hit = new Audio('../assets/sounds/hit_target.mp3');
+        this.bgMusic.volume = 0.2;
+        this.bgMusic.loop = true;
+    }
+    startbgMusic() {
+        this.bgMusic.play();
+    }
+    stopbgMusic() {
+        this.bgMusic.pause();
+        this.bgMusic.currentTime = 0;
+    }
+    hit() {
+        this.hit.play();
+    }
+    injured() {
+        this.injured.play();
+    }
+    shot() {
+        this.shot.play();
+    }
+    win() {
+        this.stopbgMusic();
+        this.win.play();
+    }
+    lose() {
+        this.stopbgMusic();
+        this.lose.play();
+    }
+}
+
+
 // This function will allow choosing a weapon. If the player carries a pistol he will be allowed to shout at two places simultaneously
 function confirm_gun() {
     let weapon = document.querySelector('input[name="weapon"]:checked').value
@@ -11,6 +50,7 @@ function confirm_gun() {
 }
 
    function make_move() {
+    bg_audio.play();
     let description = document.getElementById('description');
     description.value += '----------------------' + '\r\n';
     document.getElementById("make_move_button").style.visibility = "hidden"; // Make the "make move" button invisible while this function is running
