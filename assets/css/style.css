@@ -126,9 +126,10 @@ font-family: 'Rubik Distressed', cursive; **/
 }
 
 #end {
+    font-size: 60px;
     color:white;
     position: absolute;
-    top: 45%;
+    top: 40%;
     left: 40%;
 }
 
@@ -262,10 +263,27 @@ font-family: 'Rubik Distressed', cursive; **/
     white-space: pre-wrap;
 }
 
+/** For medium screen size from 730px **/
+@media screen and (max-width: 730px) {
+    #end {
+        left: 15%;
+    }
+    
+    #click {
+        left: 10%;
+    }
+    
+    
+}
+
 /** For medium screen size from 574px **/
 @media screen and (max-width: 574px) {
-    #endgame {
-        
+    #click {
+        font-size: 25px;
+    }
+
+    #end {
+        top: 45%;
     }
     
     .title {
@@ -300,7 +318,13 @@ font-family: 'Rubik Distressed', cursive; **/
     .damage {
         font-size: 10px;
 }
-    #endgame {
-        
+#end {
+    font-size: 40px;
+    left: 10%;
+}
+
+#click {
+    left: 5%;
+    font-size: 20px;
 }
 }
