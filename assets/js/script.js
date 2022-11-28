@@ -28,7 +28,6 @@ function confirm_gun() {
 }
 
 function make_move() {
-    audio.pause();
     let description = document.getElementById('description');
     description.value += '----------------------' + '\r\n';
     document.getElementById("make_move_button").style.visibility = "hidden"; // Make the "make move" button invisible while this function is running
@@ -66,6 +65,7 @@ function make_move() {
 
 // Make visible explosion in place where you decided to shoot
     setTimeout(function() {
+        shot.play();
         if (shoot_1 === "up"){
             document.getElementById("you_shoot_up").style.visibility = "visible";
             description.value += "You choose to aim up." + '\r\n';
@@ -185,6 +185,7 @@ function reduce_your_hp() {
 // reduce your HP if damage is made
 //Generate random numbers from 0 - 100. It will be needed to calculate where the enemy hits you. 
 //0 - 30 leg. 31 - 60 arm. 61 - 94 body  95 - 100 headshot
+    injured.play();
     let description = document.getElementById('description');
     let your_hp = parseInt(document.getElementById('your_hp').innerText);
     document.getElementById("enemy_damage").style.visibility = "visible";
@@ -218,6 +219,7 @@ function reduce_your_hp() {
 }
 
 function reduce_enemys_hp() {
+    hit_target.play();
     let enemy_hp = parseInt(document.getElementById('enemy_hp').innerText);
     document.getElementById("your_damage").style.visibility = "visible";
 // Check which gun is used
@@ -287,20 +289,27 @@ function reduce_enemys_hp() {
 function check_winner() {
     let your_hp = parseInt(document.getElementById('your_hp').innerText);
     let enemy_hp = parseInt(document.getElementById('enemy_hp').innerText);
-    if (your_hp <= 0) {
-        description.value += "You Lose" + '\r\n';
-        document.getElementById("your_hp").innerHTML = 0; // Do not allow HP slip under 0
-        document.getElementById("make_move_button").style.visibility = "hidden";
-        document.getElementById("endgame").style.visibility = "visible";
-        document.getElementById("end").innerHTML = "You Lose";
-    } else if (enemy_hp <= 0) {
-        description.value += "You WIN" + '\r\n';
-        document.getElementById("enemy_hp").innerHTML = 0; // Do not allow HP slip under 0
-        document.getElementById("make_move_button").style.visibility = "hidden";
-        document.getElementById("endgame").style.visibility = "visible";
-        document.getElementById("end").innerHTML = "You WIN";
-    }
+    setTimeout(function() {
+        if (your_hp <= 0) {
+            description.value += "You Lose" + '\r\n';
+            document.getElementById("your_hp").innerHTML = 0; // Do not allow HP slip under 0
+            document.getElementById("make_move_button").style.visibility = "hidden";
+            document.getElementById("endgame").style.visibility = "visible";
+            document.getElementById("end").innerHTML = "You Lose";
+            audio.pause();
+            lose.play();
+        } else if (enemy_hp <= 0) {
+            description.value += "You WIN" + '\r\n';
+            document.getElementById("enemy_hp").innerHTML = 0; // Do not allow HP slip under 0
+            document.getElementById("make_move_button").style.visibility = "hidden";
+            document.getElementById("endgame").style.visibility = "visible";
+            document.getElementById("end").innerHTML = "You WIN";
+            audio.pause();
+            win.play();
+        }
+    }, 1000) 
 }
+    
 
 // Start new game
 function new_game() {
