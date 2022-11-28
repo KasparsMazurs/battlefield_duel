@@ -106,40 +106,38 @@ font-family: 'Rubik Distressed', cursive; **/
     visibility: hidden;
 }
 
-/** Endgame screen **/
+/** Start and Endgame screen **/
 #endgame{
     font-size: 40px;
-    position: absolute;
-    color: aliceblue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
     background-image: url(../images/vintage-pistol.jpg);
+    opacity: 0.8;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    top: 25%;
-    left: 25%;
-    width: 50%;
-    height: 50%;
     overflow: hidden;
-    visibility: hidden;
-}
-
-#bg {
-    background-color: rgba(0, 0, 0, .3);
-    height: 1000px;
-    width: 1000px;
 }
 
 #end {
+    color:black;
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 40%;
 }
 
 #click {
+    color:black;
     position: absolute;
     top: 50%;
-    left: 30%;
-    border-bottom: 4px solid white;
+    left: 35%;
+    border-bottom: 4px solid rgb(0, 0, 0);
 }
 
 /** Game field **/
