@@ -56,9 +56,9 @@ font-family: 'Rubik Distressed', cursive; **/
 }
 
 .confirm_gun {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: red;
+    padding: 2px 10px 2px 10px;
+    background-color: rgb(4, 68, 4);
+    color: white;
     font-size: 20px;
     font-weight: 30;
 }
@@ -222,9 +222,9 @@ font-family: 'Rubik Distressed', cursive; **/
 }
 
 #make_move_button {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: green;
+    padding: 2px 10px 2px 10px;
+    background-color: rgb(4, 68, 4);
+    color: white;
     font-size: 20px;
     font-weight: 30;
     visibility: visible;
@@ -335,11 +335,14 @@ font-family: 'Rubik Distressed', cursive; **/
 }
     #end {
         font-size: 40px;
-        left: 10%;
+        left: 15%;
 }
 
     #click {
-        left: 5%;
+        left: 10%;
         font-size: 20px;
 }
+    .your_move {
+        font-size: 10px;
+    }
 }
