@@ -13,11 +13,13 @@
     <title>Battlefield duel</title>
 </head>
 <body>
+    <!-- This will be start/end game screen -->
     <div id="endgame">
         <span id="end"></span>
         <p><span id="click" onclick="new_game()">Click here to start game</span></p>
     </div>
     <h1 class="title">Battlefield duel <i class="fa-solid fa-person-rifle"></i></h1>
+    <!-- In this DIV player will choose weapon -->
     <div class="guns">
         <p class="choose_weapon">Choose your weapon!</p>
         <form class="choose_gun">
@@ -35,6 +37,7 @@
 
     </div>
     <div class="field">
+        <!-- In this DIV player will see his an enemy's HP   -->
         <div class="hp_field">
             <div class="HP">
                 Your HP: <span id="your_hp">100</span>
@@ -44,10 +47,12 @@
             </div>
         </div>
         <div class="game_field" id ="field">
+            <!-- both span in this div will be hidden and will be seen only when someone will get damage  -->
             <div class="damage">
                 <span id="your_damage">0</span>
                 <span id="enemy_damage">0</span>
             </div>
+            <!-- image assets for game.  -->
             <img class="soldier" id="your_soldier" src="assets/images/your_soldier.png" alt="Your soldier">
             <img class="soldier" id="enemy_soldier" src="assets/images/enemy_soldier.png" alt="Enemy soldier">
             <img class="explosion" id="you_shoot_straight" src="assets/images/explosion.png" alt="You shoot straight">
@@ -57,6 +62,7 @@
             <img class="explosion" id="enemy_shoot_up" src="assets/images/explosion.png" alt="Enemy shoot up">
             <img class="explosion" id="enemy_shoot_down" src="assets/images/explosion.png" alt="Enemy shoot down">
         </div>
+        <!-- In this section, player will choose his move  -->
         <section  class="move_section">
             <form class="your_move" id="move">
                 <p class="gun">Where will you shoot</p>
@@ -92,6 +98,7 @@
                 <button class="make_move" id="make_move_button" type="button" onclick="make_move()">Make move</button>
             </form>
         </section>
+        <!-- In this section, the player will see descriptions for previous turns  -->
         <div class="gems_description">
             <textarea id="description" name="description" readonly></textarea>
         </div>
