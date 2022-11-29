@@ -116,7 +116,7 @@ setTimeout(function() {
     } else if (move === "down") {
         move = 3;
     }
-}, 3500)
+}, 1500)
 // change your shooting into a number, this will be needed to check if there is damage
 setTimeout(function() {
     if (shoot_2 === "up"){
@@ -126,7 +126,7 @@ setTimeout(function() {
     } else if (shoot_2 === "straight") {
         shoot_2 = 2;
     }
-}, 3500)
+}, 1500)
 
 setTimeout(function() {
     if (shoot_1 === "up"){
@@ -136,7 +136,7 @@ setTimeout(function() {
     } else if (shoot_1 === "straight") {
         shoot_1 = 2;
     }
-}, 3500)
+}, 1500)
 
 //Check if this turn enamy made damage
 setTimeout(function() {
@@ -145,7 +145,7 @@ setTimeout(function() {
     } else if (e_shoot != move) {
         description.value += "The enemy missed you." + '\r\n';
     }
-}, 4000)
+}, 2000)
 
 //Check if this turn you made damage
 setTimeout(function() {
@@ -154,14 +154,14 @@ setTimeout(function() {
     } else if (e_move != shoot_1) {
         description.value += "You missed enemy." + '\r\n';
     }
-}, 4000)
+}, 2000)
 
 //Check if this turn you made damage wit second gun
 setTimeout(function() {
     if (e_move == shoot_2) {
         reduce_enemys_hp();
     }
-}, 4000)
+}, 2000)
 
 // Reset the game field for the next turn
 setTimeout(function() {
@@ -214,7 +214,7 @@ function reduce_your_hp() {
         y_damage = 100;
         document.getElementById("your_hp").innerHTML = your_hp - y_damage;
         description.value += "The enemy made a headshot!!!!" + '\r\n';
-        document.getElementById("enemy_damage").innerHTML = "headshot";
+        document.getElementById("enemy_damage").innerHTML = "Headshot";
     }
 }
 
@@ -280,7 +280,7 @@ function reduce_enemys_hp() {
             e_damage = 100;
             document.getElementById("enemy_hp").innerHTML = enemy_hp - e_damage;
             description.value += "You made a headshot!!!!" + '\r\n';
-            document.getElementById("your_damage").innerHTML = "-" + e_damage;
+            document.getElementById("your_damage").innerHTML = "Headshot";
         }
     }
 }
