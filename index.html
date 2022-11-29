@@ -21,12 +21,15 @@
     <div class="guns">
         <p class="choose_weapon">Choose your weapon!</p>
         <form class="choose_gun">
-            <label class="pistol" for="choose_gun"><img src="assets/images/pistol.png" alt="Pistol"></label>
-            <input class="pistol" type="radio" id="pistol" name="weapon" value="pistol">
             
-            <label class="ak-47" for="choose_gun"><img src="assets/images/ak-47.png" alt="Ak-47"></label>
+            <label class="pistol" for="choose_gun" onmouseover="ShowDetailsPistol()" onmouseout="HideDetailsPistol()"><img src="assets/images/pistol.png" alt="Pistol"></label>
+            <input class="pistol" type="radio" id="pistol" name="weapon" value="pistol">
+
+            <label class="ak-47" for="choose_gun" onmouseover="ShowDetailsAK47()" onmouseout="HideDetailsAK47()"><img src="assets/images/ak-47.png" alt="Ak-47"></label>
             <input class="ak-47" type="radio" id="ak-47" name="weapon" value="ak-47" checked>
             <br />
+            <p id="labelak">If you hit enemy successfully damage is significantly higher than with pistol.</p>
+            <p id="labelp">If you choose a pistol you can shoot at two positions simultaneously. But the damage is smaller than ak-47.</p>
             <button type="button" class="confirm_gun" onclick="confirm_gun()">Confirm gun</button>
         </form>
 

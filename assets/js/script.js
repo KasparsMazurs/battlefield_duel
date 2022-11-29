@@ -309,7 +309,6 @@ function check_winner() {
         }
     }, 1000) 
 }
-    
 
 // Start new game
 function new_game() {
@@ -320,4 +319,20 @@ function new_game() {
     let description = document.getElementById('description');
     description.value = "";
     document.getElementById("make_move_button").style.visibility = "visible";
+}
+
+function ShowDetailsPistol() {
+    document.getElementById("labelp").style.display = "block";
+}
+
+function ShowDetailsAK47() {
+    document.getElementById("labelak").style.display = "block";
+}
+
+function HideDetailsPistol() {
+    document.getElementById("labelp").style.display = "none";
+}
+
+function HideDetailsAK47() {
+    document.getElementById("labelak").style.display = "none";
 }

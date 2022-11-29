@@ -268,6 +268,16 @@ font-family: 'Rubik Distressed', cursive; **/
     white-space: pre-wrap;
 }
 
+#labelak {
+    background-color: rgba(255, 255, 255, 0.3);
+    display: none;
+}
+
+#labelp{
+    background-color: rgba(255, 255, 255, 0.3);
+    display: none;
+}
+
 /** For medium screen size from 730px **/
 @media screen and (max-width: 730px) {
     #end {
@@ -277,8 +287,7 @@ font-family: 'Rubik Distressed', cursive; **/
     #click {
         left: 10%;
     }
-    
-    
+     
 }
 
 /** For medium screen size from 574px **/
@@ -288,7 +297,7 @@ font-family: 'Rubik Distressed', cursive; **/
     }
 
     #end {
-        top: 45%;
+        top: 40%;
     }
     
     .title {
@@ -323,13 +332,13 @@ font-family: 'Rubik Distressed', cursive; **/
     .damage {
         font-size: 10px;
 }
-#end {
-    font-size: 40px;
-    left: 10%;
+    #end {
+        font-size: 40px;
+        left: 10%;
 }
 
-#click {
-    left: 5%;
-    font-size: 20px;
+    #click {
+        left: 5%;
+        font-size: 20px;
 }
 }
