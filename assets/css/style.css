@@ -63,6 +63,17 @@ font-family: 'Rubik Distressed', cursive; **/
     font-weight: 30;
 }
 
+#labelak {
+    background-color: rgba(255, 255, 255, 0.3);
+    display: none;
+}
+
+#labelp{
+    background-color: rgba(255, 255, 255, 0.3);
+    display: none;
+}
+
+/** Main game section **/
 .field {
     background-image: url(../images/soldier.jpg);
     background-repeat: no-repeat;
@@ -147,7 +158,7 @@ font-family: 'Rubik Distressed', cursive; **/
     padding-bottom: 10px;
 }
 
-/** Add soldier**/
+/** Add soldiers style**/
 #your_soldier{
     position: absolute;
     top: 650px;
@@ -161,8 +172,7 @@ font-family: 'Rubik Distressed', cursive; **/
     left: 80%;
     transform: translate(-50%, -50%);
 }
-
-/** Add explosions**/
+/** In this section will add style for explosionsIn this section will add style for explosions **/
 #you_shoot_straight{
     position: absolute;
     top: 650px;
@@ -185,14 +195,6 @@ font-family: 'Rubik Distressed', cursive; **/
     left: 80%;
     transform: translate(-50%, -50%);
     visibility: hidden;
-}
-
-#nothing {
-    display: none;
-}
-
-#nothing_1 {
-    display: none;
 }
 
 #enemy_shoot_straight{
@@ -248,10 +250,19 @@ font-family: 'Rubik Distressed', cursive; **/
     padding-left: 20px;
 }
 
+#nothing {
+    display: none;
+}
+
+#nothing_1 {
+    display: none;
+}
+
 #second_gun {
     visibility: hidden; 
 }
 
+/** Game description section **/
 .gems_description{
     background-color: rgba(103, 117, 248, 0.3);
     height: 100%;
@@ -266,16 +277,6 @@ font-family: 'Rubik Distressed', cursive; **/
     width: 70%;
     color: black;
     white-space: pre-wrap;
-}
-
-#labelak {
-    background-color: rgba(255, 255, 255, 0.3);
-    display: none;
-}
-
-#labelp{
-    background-color: rgba(255, 255, 255, 0.3);
-    display: none;
 }
 
 /** For medium screen size from 730px **/

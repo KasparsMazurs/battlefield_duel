@@ -1,19 +1,18 @@
 // Add/Define audio assets for game
 var audio = new Audio("assets/sounds/background.mp3");
-
-function loop_bg_music() {
-    audio.currentTime = 0; //rewind audio track to the beginning
-    audio.play(); // play it
-    audio.volume = 0.2; //lower background music volume
-    audio.loop = true;
-  }
-
 var hit_target = new Audio("assets/sounds/hit_target.mp3");
 var injured = new Audio("assets/sounds/injured.mp3");
 var lose = new Audio("assets/sounds/lose.mp3");
 var shot = new Audio("assets/sounds/shot.mp3");
 var win = new Audio("assets/sounds/win.mp3");
 
+// This function will loop background music
+function loop_bg_music() {
+    audio.currentTime = 0; //rewind audio track to the beginning
+    audio.play(); // play it
+    audio.volume = 0.2; //lower background music volume
+    audio.loop = true;
+  }
 
 // This function will allow choosing a weapon. If the player carries a pistol he will be allowed to shout at two places simultaneously
 function confirm_gun() {
@@ -23,15 +22,16 @@ function confirm_gun() {
     } else {
         document.getElementById("second_gun").style.visibility = "hidden";
     }
-// If you use ak-47 other pistol will do nothing
+// If you use ak-47, a second gun will do nothing
     document.forms["move"]["nothing"].checked=true;
 }
 
+// This will be main function that will run after each turn
 function make_move() {
-    let description = document.getElementById('description');
-    description.value += '----------------------' + '\r\n';
+    let description = document.getElementById('description'); // Add lines in the description section to separate text from previous move
+    description.value += '----------------------' + '\r\n'; // Make the "make move" button invisible while this function is running
     document.getElementById("make_move_button").style.visibility = "hidden"; // Make the "make move" button invisible while this function is running
-    setTimeout(function() {
+    setTimeout(function() { 
         document.getElementById("make_move_button").style.visibility = "visible";
     }, 5000) // Make the "make move" button visible after 5 sec
     let move = document.querySelector('input[name="move_preference"]:checked').value
@@ -117,6 +117,7 @@ setTimeout(function() {
         move = 3;
     }
 }, 1500)
+
 // change your shooting into a number, this will be needed to check if there is damage
 setTimeout(function() {
     if (shoot_2 === "up"){
@@ -128,6 +129,7 @@ setTimeout(function() {
     }
 }, 1500)
 
+// change your shooting into a number, this will be needed to check if there is damage
 setTimeout(function() {
     if (shoot_1 === "up"){
         shoot_1 = 1;
@@ -138,7 +140,7 @@ setTimeout(function() {
     }
 }, 1500)
 
-//Check if this turn enamy made damage
+//Check if this turn enemy made damage
 setTimeout(function() {
     if (e_shoot == move) {
         reduce_your_hp();
@@ -181,6 +183,7 @@ setTimeout(function() {
 
 }
 
+// Reduce you HP
 function reduce_your_hp() {
 // reduce your HP if damage is made
 //Generate random numbers from 0 - 100. It will be needed to calculate where the enemy hits you. 
@@ -218,6 +221,7 @@ function reduce_your_hp() {
     }
 }
 
+// Enemys you HP
 function reduce_enemys_hp() {
     hit_target.play();
     let enemy_hp = parseInt(document.getElementById('enemy_hp').innerText);
@@ -228,6 +232,7 @@ function reduce_enemys_hp() {
 //Generate random numbers from 0 - 100. It will be needed to calculate where the enemy hits you. 
 //0 - 30 leg. 31 - 60 arm. 61 - 94 body  95 - 100 headshot
     let e_damage = [];
+    //Calculate damage with pistol
     if (weapon === "pistol"){
         let y_aim = Math.floor(Math.random()*100) + 1;
         if (y_aim <= 30) {
@@ -255,6 +260,7 @@ function reduce_enemys_hp() {
             description.value += "You made a headshot!!!!" + '\r\n';
             document.getElementById("your_damage").innerHTML = "Headshot";
         }
+    //Calculate damage with ak-47
     } else if (weapon === "ak-47"){
         let y_aim = Math.floor(Math.random()*100) + 1;
         if (y_aim <= 30) {
@@ -321,18 +327,22 @@ function new_game() {
     document.getElementById("make_move_button").style.visibility = "visible";
 }
 
+// Show pistol details
 function ShowDetailsPistol() {
     document.getElementById("labelp").style.display = "block";
 }
 
+// Show ak-47 details
 function ShowDetailsAK47() {
     document.getElementById("labelak").style.display = "block";
 }
 
+// Hide pistol details
 function HideDetailsPistol() {
     document.getElementById("labelp").style.display = "none";
 }
 
+// Hide ak-47 details
 function HideDetailsAK47() {
     document.getElementById("labelak").style.display = "none";
 }
