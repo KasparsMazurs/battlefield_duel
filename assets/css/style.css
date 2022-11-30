@@ -298,7 +298,7 @@ font-family: 'Rubik Distressed', cursive; **/
     }
 
     #end {
-        top: 40%;
+        top: 35%;
     }
     
     .title {
@@ -308,6 +308,13 @@ font-family: 'Rubik Distressed', cursive; **/
 
     .hp_field {
         font-size: 20px;
+}
+    .your_move p {
+        padding-top: 10px;
+}
+
+    .your_move label {
+        padding-left: 10px;
 }
 }
 
@@ -319,19 +326,19 @@ font-family: 'Rubik Distressed', cursive; **/
     }
 
     .hp_field {
-        font-size: 10px;
+        font-size: 12px;
 }
     .confirm_gun {
         margin-top: 10px;
         margin-bottom: 10px;
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 10;
 }
     .choose_weapon{
-        font-size: 20px;
+        font-size: 12px;
 }
     .damage {
-        font-size: 10px;
+        font-size: 12px;
 }
     #end {
         font-size: 40px;
@@ -342,7 +349,22 @@ font-family: 'Rubik Distressed', cursive; **/
         left: 10%;
         font-size: 20px;
 }
+
     .your_move {
-        font-size: 10px;
+        font-size: 12px;
+        font-weight: normal;
     }
+
+    .your_move p {
+        padding-top: 6px;
+    }
+    
+    .your_move label {
+        padding-left: 6px;
+    }
+
+    #make_move_button {
+        font-size: 12px;
+        font-weight: 10;
+}
 }
