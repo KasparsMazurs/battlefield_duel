@@ -279,14 +279,14 @@ font-family: 'Rubik Distressed', cursive; **/
     white-space: pre-wrap;
 }
 
-/** For medium screen size from 730px **/
-@media screen and (max-width: 730px) {
+/** For medium screen size from 1000px **/
+@media screen and (max-width: 1000px) {
     #end {
-        left: 15%;
+        left: 25%;
     }
     
     #click {
-        left: 10%;
+        left: 15%;
     }
      
 }
@@ -298,7 +298,7 @@ font-family: 'Rubik Distressed', cursive; **/
     }
 
     #end {
-        top: 35%;
+        top: 40%;
     }
     
     .title {
