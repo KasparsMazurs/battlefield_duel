@@ -25,10 +25,10 @@
         <p class="choose_weapon">Choose your weapon!</p>
         <form id="choose_guns" class="choose_gun">
             
-            <label class="pistol" for="choose_guns" onmouseover="ShowDetailsPistol()" onmouseout="HideDetailsPistol()"><img src="assets/images/pistol.png" alt="Pistol"></label>
+            <label class="pistol" for="pistol" onmouseover="ShowDetailsPistol()" onmouseout="HideDetailsPistol()"><img src="assets/images/pistol.png" alt="Pistol"></label>
             <input class="pistol" type="radio" id="pistol" name="weapon" value="pistol">
 
-            <label class="ak-47" for="choose_guns" onmouseover="ShowDetailsAK47()" onmouseout="HideDetailsAK47()"><img src="assets/images/ak-47.png" alt="Ak-47"></label>
+            <label class="ak-47" for="ak-47" onmouseover="ShowDetailsAK47()" onmouseout="HideDetailsAK47()"><img src="assets/images/ak-47.png" alt="Ak-47"></label>
             <input class="ak-47" type="radio" id="ak-47" name="weapon" value="ak-47" checked>
             <br>
             <p id="labelak">If you hit enemy successfully damage is significantly higher than with pistol.</p>
@@ -67,32 +67,32 @@
         <div  class="move_section">
             <form class="your_move" id="move">
                 <p class="gun">Where will you shoot</p>
-                <label for="move">Up</label>
+                <label for="up_1">Up</label>
                 <input type="radio" id="up_1" name="shoot_preference_1" value="up" required>
-                <label for="move">Straight</label>
+                <label for="straight_1">Straight</label>
                 <input type="radio" id="straight_1" name="shoot_preference_1" value="straight" required>
-                <label for="move">Down</label>
+                <label for="down_1">Down</label>
                 <input type="radio" id="down_1" name="shoot_preference_1" value="down" required>
                 
                 <div id="second_gun">
                 <p class="second_gun">Where will you shoot with second gun</p>
                 
-                <label class="second_gun" for="movev">Up</label>
+                <label class="second_gun" for="up_2">Up</label>
                 <input class="second_gun" type="radio" id="up_2" name="shoot_preference_2" value="up">
-                <label class="second_gun" for="move">Straight</label>
+                <label class="second_gun" for="straight_2">Straight</label>
                 <input class="second_gun" type="radio" id="straight_2" name="shoot_preference_2" value="straight">
-                <label class="second_gun" for="move">Down</label>
+                <label class="second_gun" for="down_2">Down</label>
                 <input class="second_gun" type="radio" id="down_2" name="shoot_preference_2" value="down">
-                <label class="second_gun" for="move" id="nothing_1">Don't shoot</label>
+                <label class="second_gun" for="nothing" id="nothing_1">Don't shoot</label>
                 <input class="second_gun" type="radio" id="nothing" name="shoot_preference_2" value="nothing" checked>
                 </div>
 
                 <p class="move">Where will you move</p>
-                <label for="move">Up</label>
+                <label for="up_m">Up</label>
                 <input type="radio" id="up_m" name="move_preference" value="up" required>
-                <label for="move">Stay put</label>
+                <label for="stay_put">Stay put</label>
                 <input type="radio" id="stay_put" name="move_preference" value="stay_put" required>
-                <label for="move">Down</label>
+                <label for="down_m">Down</label>
                 <input type="radio" id="down_m" name="move_preference" value="down" required>
 
                 <br>

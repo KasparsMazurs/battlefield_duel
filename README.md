@@ -2,7 +2,7 @@
 
 Battlefield duel is a landing page for a game in which your main task is to win the opponent in a shooting duel.
 
-![responsivedesign](assets/images/Read%20me/responsive.JPG)
+![responsivedesign](assets/images/readme/responsive.jpg)
 
 ## Languages Used
 * HTML5
