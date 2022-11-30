@@ -8,7 +8,7 @@ font-family: 'Rubik Distressed', cursive; **/
     margin: 0;
     padding: 0;
     border: none;
-    font-family:Marhey, ans-serif;
+    font-family: 'Marhey', 'ans-serif';
 }
 
 /** Title **/
@@ -17,7 +17,7 @@ font-family: 'Rubik Distressed', cursive; **/
     background-color: rgba(255, 0, 0, 0.9);
     background-size:contain;
     background-position: center;
-    font-family: Rubik Distressed, sans-serif;
+    font-family: 'Rubik Distressed', 'sans-serif';
     color:antiquewhite;
     font-size: 60px;
     font-weight: 500;

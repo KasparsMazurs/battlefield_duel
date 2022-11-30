@@ -4,20 +4,25 @@ Battlefield duel is a landing page for a game in which your main task is to win 
 
 ![responsivedesign](assets/images/Read%20me/responsive.JPG)
 
-
-
-
-
-
-
-![responsivedesign](assets/images/Read%20me/responsive.JPG)
-
 ## Languages Used
 * HTML5
 * CSS3
 * Javascript
 
 ## Features
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - When you will open this page you will see in the middle of the screen red text "Click to Start" when you will click on the screen text will disappear and the game will start.
 ![responsivedesign](assets/images/Read%20me/Click%20to%20Start.JPG)
