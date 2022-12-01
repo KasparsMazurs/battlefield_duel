@@ -36,31 +36,21 @@ Battlefield duel is a landing page for a game in which your main task is to win 
 
 ![makemove](assets/images/readme/make_move.jpg)
 
-- 
+- After each turn in the description section will appear short description regarding the previous turn.
 
 ![description](assets/images/readme/description.jpg)
 
-- 
+- If someone's HP will drop under 0 game will and there will appear new screen with the text You win on You Lose. After that there will be the text "Click here to start game" when you will click on the text, the text will disappear and a new game will start.
 
 ![description](assets/images/readme/end.jpg)
 
-
-
-
-
-
-
-
-
-
-
-- When you will start the game on the top of the screen you will find the text of a short and simple description of what you should do.
-
-- Below the short description, you will find two fields with red text. First will count time how long the game is going and another will count flips made by the player.
-
-- Below that, you will find 16 cards in a 4 x 4 field with a Pug image and when you click on each of these cards this will reveal which animal is behind this card, there can be reviled only two cards at the same time and your main task is to find two animals when you will find one pair theas cards won flip back and stay reviled.
-
-![responsivedesign](assets/images/Read%20me/Game.JPG)
+- In this game, sound effects are used:
+  - background music
+  - shooting sound when a shot is made
+  - sound effect when you made a hit
+  - sound effect when enemy made a hit
+  - sound effect if you win a game
+  - sound effect if you lose a game
 
 ## Testing
 
@@ -70,12 +60,12 @@ Battlefield duel is a landing page for a game in which your main task is to win 
 ## Validator Testing
 
 - HTML
-  - No errors were returned when passing through the official W3C validator <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fkasparsmazurs.github.io%2FFind_Pictures%2F" target="_blank">W3C validator</a>
+  - No errors were returned when passing through the official W3C validator <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fkasparsmazurs.github.io%2Fbattlefield_duel%2F" target="_blank">W3C validator</a>
 - CSS
-  - No errors were found when passing through the official (Jigsaw) validator <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkasparsmazurs.github.io%2FFind_Pictures%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en" target="_blank">(Jigsaw) validator</a>
+  - No errors were found when passing through the official (Jigsaw) validator <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkasparsmazurs.github.io%2Fbattlefield_duel%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en" target="_blank">(Jigsaw) validator</a>
 - Accessibility
   - By using lighthouse in devtools i can confirm that the fonts are easy to read
-![responsivedesign](assets/images/Read%20me/Lighthouse.JPG)
+![lighthouse](assets/images/readme/lighthouse.jpg)
 
 ## Deployment
 
@@ -88,7 +78,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 5. The page will automatically refresh.
 6. Scroll back down through the page to locate the now published site link in the "GitHub Pages" section.
 
-The live link can be found <a href="https://kasparsmazurs.github.io/Find_Pictures/" target="_blank">here</a>
+The live link can be found <a href="https://kasparsmazurs.github.io/battlefield_duel/" target="_blank">here</a>
 
 ## Credits
 
