@@ -65,7 +65,28 @@ Battlefield duel is a landing page for a game in which your main task is to win 
   - No errors were found when passing through the official (Jigsaw) validator <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkasparsmazurs.github.io%2Fbattlefield_duel%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en" target="_blank">(Jigsaw) validator</a>
 - Accessibility
   - By using lighthouse in devtools i can confirm that the fonts are easy to read
+
 ![lighthouse](assets/images/readme/lighthouse.jpg)
+
+## Bugs
+
+- When the player guess correctly there were times that the enemy didn't get any damage. 
+
+  - The issue was that enemy and players damage was checked in one if statement so if the opponent made a hit if statement ended and didn't reduce enemy HP.
+
+- If the player chooses a pistol, then selects both places where to shoot hi could switch to AK-47 and make two shots with AK-47.
+
+  - To solve this issue I made an additional shot option for the second gun that does nothing. Made this button invisible and checked every time when choosing gun button is pressed.
+
+- Bug
+
+![bug](assets/images/readme/bug.JPG)
+
+- Solution (add additional line in HTML file)
+
+![solution](assets/images/readme/solution.JPG)
+
+- Solution (add additional line in HTML file)
 
 ## Deployment
 
@@ -81,6 +102,8 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 The live link can be found <a href="https://kasparsmazurs.github.io/battlefield_duel/" target="_blank">here</a>
 
 ## Credits
+
+- <a href="https://stackoverflow.com//" target="_blank">Stackoverflow</a>  for providing solutions for problems in code
 
 ### Content
 

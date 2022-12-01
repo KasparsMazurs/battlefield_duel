@@ -16,7 +16,7 @@ function loop_bg_music() {
 
 // This function will allow choosing a weapon. If the player carries a pistol he will be allowed to shout at two places simultaneously
 function confirm_gun() {
-    let weapon = document.querySelector('input[name="weapon"]:checked').value
+    let weapon = document.querySelector('input[name="weapon"]:checked').value;
     if (weapon === "pistol"){
        document.getElementById("second_gun").style.visibility = "visible";
     } else {
@@ -34,9 +34,9 @@ function make_move() {
     setTimeout(function() { 
         document.getElementById("make_move_button").style.visibility = "visible";
     }, 5000) // Make the "make move" button visible after 5 sec
-    let move = document.querySelector('input[name="move_preference"]:checked').value
-    let shoot_1 = document.querySelector('input[name="shoot_preference_1"]:checked').value
-    let shoot_2 = document.querySelector('input[name="shoot_preference_2"]:checked').value
+    let move = document.querySelector('input[name="move_preference"]:checked').value;
+    let shoot_1 = document.querySelector('input[name="shoot_preference_1"]:checked').value;
+    let shoot_2 = document.querySelector('input[name="shoot_preference_2"]:checked').value;
 
 // Make your solder move up or down
     if (move === "up"){
