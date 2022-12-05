@@ -33,7 +33,7 @@ function make_move() {
     document.getElementById("make_move_button").style.visibility = "hidden"; // Make the "make move" button invisible while this function is running
     setTimeout(function() { 
         document.getElementById("make_move_button").style.visibility = "visible";
-    }, 5000) // Make the "make move" button visible after 5 sec
+    }, 5000); // Make the "make move" button visible after 5 sec
     let move = document.querySelector('input[name="move_preference"]:checked').value;
     let shoot_1 = document.querySelector('input[name="shoot_preference_1"]:checked').value;
     let shoot_2 = document.querySelector('input[name="shoot_preference_2"]:checked').value;
@@ -76,7 +76,7 @@ function make_move() {
             document.getElementById("you_shoot_straight").style.visibility = "visible";
             description.value += "You choose to aim straight." + '\r\n';
          }
-    }, 1000)
+    }, 1000);
     
 // Make visible explosion in place where you decided to shoot with secon gun
     setTimeout(function() {
@@ -90,7 +90,7 @@ function make_move() {
             document.getElementById("you_shoot_straight").style.visibility = "visible";
             description.value += "You choose to aim straight with your second gun." + '\r\n';
         }
-    }, 1000)
+    }, 1000);
 
 // Make visible explosion in place where enemy decided to shoot down 1=up, 2=straight, 3=down
 let e_shoot = Math.floor(Math.random()*3) + 1;
@@ -105,7 +105,7 @@ setTimeout(function() {
         document.getElementById("enemy_shoot_down").style.visibility = "visible";
         description.value += "Enemy choose to aim down." + '\r\n';
     }
-}, 1000)
+}, 1000);
 
 // change your move into a number, this will be needed to check if there is damage
 setTimeout(function() {
@@ -116,7 +116,7 @@ setTimeout(function() {
     } else if (move === "down") {
         move = 3;
     }
-}, 1500)
+}, 1500);
 
 // change your shooting into a number, this will be needed to check if there is damage
 setTimeout(function() {
@@ -127,7 +127,7 @@ setTimeout(function() {
     } else if (shoot_2 === "straight") {
         shoot_2 = 2;
     }
-}, 1500)
+}, 1500);
 
 // change your shooting into a number, this will be needed to check if there is damage
 setTimeout(function() {
@@ -138,7 +138,7 @@ setTimeout(function() {
     } else if (shoot_1 === "straight") {
         shoot_1 = 2;
     }
-}, 1500)
+}, 1500);
 
 //Check if this turn enemy made damage
 setTimeout(function() {
@@ -147,7 +147,7 @@ setTimeout(function() {
     } else if (e_shoot != move) {
         description.value += "The enemy missed you." + '\r\n';
     }
-}, 2000)
+}, 2000);
 
 //Check if this turn you made damage
 setTimeout(function() {
@@ -156,14 +156,14 @@ setTimeout(function() {
     } else if (e_move != shoot_1) {
         description.value += "You missed enemy." + '\r\n';
     }
-}, 2000)
+}, 2000);
 
 //Check if this turn you made damage wit second gun
 setTimeout(function() {
     if (e_move == shoot_2) {
         reduce_enemys_hp();
     }
-}, 2000)
+}, 2000);
 
 // Reset the game field for the next turn
 setTimeout(function() {
@@ -179,7 +179,7 @@ setTimeout(function() {
     document.getElementById("your_damage").style.visibility = "hidden";
     description.scrollTop = description.scrollHeight; // scroll description down
     check_winner();
-}, 5000) 
+}, 5000);
 
 }
 
@@ -227,7 +227,7 @@ function reduce_enemys_hp() {
     let enemy_hp = parseInt(document.getElementById('enemy_hp').innerText);
     document.getElementById("your_damage").style.visibility = "visible";
 // Check which gun is used
-    let weapon = document.querySelector('input[name="weapon"]:checked').value
+    let weapon = document.querySelector('input[name="weapon"]:checked').value;
 // reduce enemys HP if damage is made
 //Generate random numbers from 0 - 100. It will be needed to calculate where the enemy hits you. 
 //0 - 30 leg. 31 - 60 arm. 61 - 94 body  95 - 100 headshot
@@ -313,7 +313,7 @@ function check_winner() {
             audio.pause();
             win.play();
         }
-    }, 1000) 
+    }, 1000);
 }
 
 // Start new game

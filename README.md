@@ -63,6 +63,8 @@ Battlefield duel is a landing page for a game in which your main task is to win 
   - No errors were returned when passing through the official W3C validator <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fkasparsmazurs.github.io%2Fbattlefield_duel%2F" target="_blank">W3C validator</a>
 - CSS
   - No errors were found when passing through the official (Jigsaw) validator <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkasparsmazurs.github.io%2Fbattlefield_duel%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en" target="_blank">(Jigsaw) validator</a>
+- JavaScript
+  - No errors were found when passing through the jshint.com <a href="https://jshint.com/" target="_blank">(Jigsaw)</a>
 - Accessibility
   - By using lighthouse in devtools i can confirm that the fonts are easy to read
 
